@@ -35,19 +35,28 @@ header{
     /* flex-wrap: wrap; */
     overflow-x: auto;
     .tmp{gap:2;}
-    .seminar{
+    .seminar, .weeklyseminar{
         background-color: #9BD8FF;
         padding: 10px;
         border-radius: 10px;
         margin-left: 20px;
-        min-width: 325px;
         .gmp{gap:1;}
-        h3{
+        h5{
             text-align: center;
+            margin-bottom: 10px;
+        }
+        ol{
+            padding-left: 25px;
         }
     }
+    .weeklyseminar{
+        min-width: 225px;
+    }
+    .seminar{
+        min-width: 325px;
+    }
 }
-.officialseminars .seminar .date{
+.officialseminars .date{
     display: flex;
     justify-content: space-evenly;
     gap: 20px;
@@ -61,7 +70,7 @@ header{
         font-weight: bold;
     }
 }
-.officialseminars .seminar .progress{
+.officialseminars .progress{
     height: fit-content;
     display: flex;
     gap: 30px;
@@ -78,33 +87,147 @@ header{
         justify-content: center;
         align-items: center;
     }
-    .prog .circle{
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        background-color: white;
-        border: solid 5px green
-    }
 }
-.addseminar{
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
+
+/* Trigger button */
+.open-modal-btn {
+    position: fixed;
+    bottom: 35px;
+    right: 50px;
     background-color: white;
     color: #133E87;
-    border: solid 0.5px #9BD8FF;
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
+    border: solid 0.5px #133E87;
+    font-size: 4rem;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
     cursor: pointer;
-    transition: background-color 0.5s;
-
+    transition: color, background-color 0.5s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-.addseminar:hover{
+.open-modal-btn:hover {
     background-color: #133E87;
     color: white;
+}
+  /* Modal background */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.modal h1 {
+    color: #0a2f73;
+    margin-bottom: 20px;
+}
+
+.toggle-buttons {
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.toggle-buttons button {
+    flex: 1;
+    padding: 15px;
+    background-color: #f7f7e5;
+    border: none;
+    font-size: 1rem;
+    color: #0a2f73;
+    cursor: pointer;
+}
+
+.toggle-buttons .active {
+    background-color: #2ac2a3;
+    color: white;
+}
+
+.time-date-inputs {
+    background-color: #f7f7e5;
+    padding: 15px 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.time-date-inputs input[type="time"],
+.time-date-inputs input[type="date"] {
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    color: #0a2f73;
+    outline: none;
+}
+
+.requirements {
+    text-align: left;
+    color: #0a2f73;
+    margin-bottom: 20px;
+    .tmp{gap:1;}
+    strong{
+        display: block;
+        margin-bottom: 10px;
+    }
+    textarea {
+        width: 100%;
+        height: 80px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        resize: none;
+        font-size: 1rem;
+        outline: none;
+    }
+}
+
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.create-btn {
+    background-color: #006fd6;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 999px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.actions a {
+    text-decoration: underline;
+    color: black;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
 }

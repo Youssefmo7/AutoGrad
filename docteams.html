@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/docteams.css">
+    <link rel="stylesheet" href="css/commons.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="pics/logoW.png" alt="">
+            </div>
+            <p>"Automating Your Graduation Success"</p>
+        </header>
+        <div class="nav-container">
+            <a href="#" class="nav-bullet">
+                <i class="fa-regular fa-user"></i>
+                <span>Profile</span>
+            </a>
+            <a href="#" class="nav-bullet">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Seminars</span>
+            </a>
+            <a href="#" class="nav-bullet">
+                <i class="fa-solid fa-people-group"></i>
+                <span>Teams</span>
+            </a>
+            <a href="#" class="nav-bullet">
+                <i class="fa-solid fa-user-pen"></i>
+                <span>Edit Profile</span>
+            </a>
+            <a href="#" class="nav-bullet">
+                <i class='bx bx-log-out-circle'></i>
+                <span>Log Out</span>
+            </a>
+        </div>
+        <ol class="teams">
+            <li class="selected">Team 1</li>
+            <li>Team 2</li>
+            <li>Team 3</li>
+            <li>Team 4</li>
+            <li>Team 5</li>
+        </ol>
+    </div>
+    <script>
+        const listItems = document.querySelectorAll('.teams li');
+        let removeClass = function (){
+            listItems.forEach(item => {
+                item.classList.remove('selected');
+            });
+        }
+        listItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                removeClass();
+                e.target.classList.add('selected');
+            });
+        });
+    </script>
+</body>
+</html>
