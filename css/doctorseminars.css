@@ -1,0 +1,110 @@
+#offseminarsH{
+    margin: 10px 80px;
+    color: grey;
+    width: fit-content;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #9CD49F;
+}
+header{
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    gap: 34%;
+    background-color: #133E87;
+    color: white;
+    justify-content: flex-start;
+    align-items: center;
+    .tmp{gap:1;}
+    p{
+        align-self: center;
+        margin: 0;
+    }
+    .logo{
+        width: fit-content;
+        .tmp{gap:1;}
+        img{
+            width: 65px;
+        }
+    }
+}
+.officialseminars{
+    margin: 5px 100px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    /* flex-wrap: wrap; */
+    overflow-x: auto;
+    .tmp{gap:2;}
+    .seminar{
+        background-color: #9BD8FF;
+        padding: 10px;
+        border-radius: 10px;
+        margin-left: 20px;
+        min-width: 325px;
+        .gmp{gap:1;}
+        h3{
+            text-align: center;
+        }
+    }
+}
+.officialseminars .seminar .date{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    .gmp{gap:1;}
+    span{
+        color: #133E87;
+        font-weight: bold;
+    }
+}
+.officialseminars .seminar .progress{
+    height: fit-content;
+    display: flex;
+    gap: 30px;
+    background-color: transparent;
+    .gmp{gap:1;}
+    .requirments{
+        height: fit-content;
+        h5{
+            margin-left: 20px;
+        }
+    }
+    .prog{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .prog .circle{
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-color: white;
+        border: solid 5px green
+    }
+}
+.addseminar{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    background-color: white;
+    color: #133E87;
+    border: solid 0.5px #9BD8FF;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+
+}
+.addseminar:hover{
+    background-color: #133E87;
+    color: white;
+}
