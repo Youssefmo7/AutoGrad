@@ -66,9 +66,76 @@
                 </div>
             </div>
         </div>
-        <div class="addseminar">
-            <i class='bx bx-plus'></i>
+        <h4 id="offseminarsH">Weekly seminars</h4>
+        <div class="officialseminars">
+            <div class="weeklyseminar">
+                <h5>Weekly Seminar</h5>
+                <div class="date">
+                    <div class="hour"><i class="fa-regular fa-clock"></i> <span>10:00 AM</span></div>
+                    <div class="day">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <span>August</span>
+                        <span>5</span>
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="requirments">
+                        <h5>requirments</h5>
+                        <ol>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FAB trigger -->
+        <button class="open-modal-btn" id="openModal">+</button>
+        <!-- Modal Popup -->
+        <div class="modal" id="seminarModal">
+            <div class="modal-content">
+                    <span class="close-btn" id="closeModal">&times;</span>
+                    <h1>create seminar</h1>
+                    <div class="toggle-buttons">
+                        <button id="seminarBtn">Seminar</button>
+                        <button id="weeklyBtn" class="active">Weekly Seminar</button>
+                    </div>
+                <div class="time-date-inputs">
+                    <input type="time" value="10:00">
+                    <input type="date" value="2025-08-17">
+                </div>
+                <div class="requirements">
+                    <strong>Requirements:</strong>
+                    <textarea placeholder="List requirements (e.g. r1, r2...)"></textarea>
+                </div>
+                <div class="actions">
+                    <button class="create-btn">create</button>
+                    <a id="cancelBtn">cancel</a>
+                </div>
+            </div>
         </div>
     </div>
+    <script>
+        const openModal = document.getElementById('openModal');
+        const seminarModal = document.getElementById('seminarModal');
+        const closeModal = document.getElementById('closeModal');
+        const cancelBtn = document.getElementById('cancelBtn');
+        openModal.onclick = () => seminarModal.style.display = 'flex';
+        closeModal.onclick = () => seminarModal.style.display = 'none';
+        cancelBtn.onclick = () => seminarModal.style.display = 'none';
+        // Toggle logic
+        const seminarBtn = document.getElementById('seminarBtn');
+        const weeklyBtn = document.getElementById('weeklyBtn');
+        seminarBtn.onclick = () => {
+            seminarBtn.classList.add('active');
+            weeklyBtn.classList.remove('active');
+        }
+        weeklyBtn.onclick = () => {
+            weeklyBtn.classList.add('active');
+            seminarBtn.classList.remove('active');
+        }
+    </script>
 </body>
 </html>

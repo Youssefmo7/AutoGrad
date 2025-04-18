@@ -1,0 +1,20 @@
+.teams{
+    display: flex;
+    list-style-type: none;
+    font-weight: bold;
+    background-color: rgba(155, 216, 255);
+    justify-content: center;
+    gap: 50px;
+    .tmp{gap:1;}
+    li{
+        padding: 15px;
+        width: 20%;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+}
+.selected{
+    background-color: white;
+    border-top-right-radius: 20px;
+}

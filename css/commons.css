@@ -8,19 +8,18 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     background: linear-gradient(90deg, #e2e2e2, #4376cd);
 }
 .container{
 
     position: relative;
     width : 95%;
-    min-height : 800px;
+    height : 800px;
     background : #fff;
     border-radius : 10px;
     box-shadow : 0 0 30px rgba(0, 0, 0, .2);
-    overflow: auto;
     margin: 20px;
+    padding-bottom: 50px;
 }
 /* Header */
 header{
