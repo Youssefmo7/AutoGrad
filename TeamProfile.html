@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/commons.css">
+    <link rel="stylesheet" href="css/TeamProfile.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Team Profile</title>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Header bar -->
+        
+        <header>
+            <div class="logo">
+                <img src="pics/logoW.png" alt="Auto Grad">
+            </div>
+            <p>"Automating Your Graduation Success"</p>
+        </header>
+
+        <!------------------------------------------------------------->
+
+
+        <!-- nav left bar -->
+        
+        <div class="nav-container">
+            <a href="#" class="nav-bullet">
+                <i class="fa-regular fa-user"></i>
+                <span>Profile</span>
+            </a>
+            <a href="#" class="nav-bullet">
+                <i class="fa-solid fa-people-group"></i>
+                <span>Team</span>
+            </a>
+            <a href="#" class="nav-bullet">
+                <i class='bx bx-slideshow'></i>
+                <span>Seminar</span>
+            </a>
+            <a href="#" class="nav-bullet">
+                <i class="fa-solid fa-user-pen"></i>
+                <span>Edit Profile</span>
+            </a>
+            <a href="login.html" class="nav-bullet">
+                <i class='bx bx-log-out-circle'></i>
+                <span>Log Out</span>
+            </a>
+        </div>
+
+        <!------------------------------------------------------------->
+        
+
+        <div class="profile">
+
+<!-- left card ---------------------------------->
+            <div class="ProjectProfile">
+
+                <div class="ProjectTitle">
+
+                    <div class="identity">
+                        <h3 class="Project_name">AUTO GRAD </h3>
+                    </div>
+                    <div class="imgbox"><img src="/images/logo.png" alt=""></div>
+                </div>
+
+                <div class="bio">
+                    senior professor with 10 years of experience supervising graduation projects. He is organized, thorough, and passionate about guiding students to success  .
+                </div>
+                
+                <div class="academicInfo">
+
+                    <div class="UploadProposal">
+                        <div class="upload-preview-row" id="uploadPreviewRow">
+                            <label class="upload-box" for="fileInput">
+                                <i class="fas fa-upload"></i>
+                            </label>
+                            <div id="previewContainer" style="display: flex; gap: 20px; flex-wrap: wrap;"></div>
+                        </div>
+                            <input type="file" id="fileInput" name="files" multiple />
+                        <div class="buttons">
+                            <button class="send-btn" id="sendBtn">Submit</button>
+                        </div>
+                        <div class="message" id="successMessage">✅ تم رفع الملفات بنجاح!</div>
+                    </div>
+                    <div class="Grad_Card">
+                        <h3 style="text-align: center;">Total Grads</h3>
+                        <div class="Grad"><p>000<span>/150</span></p></div>
+                    </div>
+
+                </div>
+
+
+                <div class="DoctorFeedback">
+                    <section class="feedback-section">
+                        <h2>Doctor Feedbacks📝  </h2>
+                        
+                        <div class="feedback-card success">
+                            <div class="feedback-header">
+                            <div class="doctor-info">
+                                <img src="https://i.pravatar.cc/40?u=doctor1" alt="دكتور" />
+                                <strong>د. محمد علي</strong>
+                            </div>
+                            <span class="feedback-date">2025-04-17</span>
+                            </div>
+                            <div class="feedback-body">
+                            ✅ المشروع ممتاز، محتاجين تحسين UI صفحة الدخول.
+                            </div>
+                        </div>
+                        
+                        <div class="feedback-card warning">
+                            <div class="feedback-header">
+                            <div class="doctor-info">
+                                <img src="https://i.pravatar.cc/40?u=doctor2" alt="دكتور" />
+                                <strong>د. أحمد السيد</strong>
+                            </div>
+                            <span class="feedback-date">2025-04-14</span>
+                            </div>
+                            <div class="feedback-body">
+                            ⚠️ حاولوا ترفعوا ملفات الـ Demo قبل السيمينار الجاي بيومين.
+                            </div>
+                        </div>
+                        </section>
+                    
+                </div>
+
+
+            </div>
+
+<!---------------------------------------------------------------------------->
+
+
+<!-- right card ----------------------------------->
+            <div class="team">
+                <h3>Registered Teams</h3>
+                <hr>
+                <div class="Members_stack">
+                    <div class="team-card" id="leader">
+                        <div class="team-logo">
+                            <img src="pics/avatar.png" alt="Team Logo">
+                        </div>
+                        <div class="team-name">
+                            <h3>Kareem Ashraaf</h3>
+                            <p> 200017722</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-logo">
+                            <img src="pics/avatar.png" alt="Team Logo">
+                        </div>
+                        <div class="team-name">
+                            <h3>Ibrahem Mohamed Omara</h3>
+                            <p> 20017723</p>
+                        </div>
+                        <button class="remove_btn"> <i class='bx bx-x-circle' ></i></button>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-logo">
+                            <img src="pics/avatar.png" alt="Team Logo">
+                        </div>
+                        <div class="team-name">
+                            <h3>Youssef Mohamed Ramadan</h3>
+                            <p> 200017720</p>
+                        </div>
+                        <button class="remove_btn"> <i class='bx bx-x-circle' ></i></button>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-logo">
+                            <img src="pics/avatar.png" alt="Team Logo">
+                        </div>
+                        <div class="team-name">
+                            <h3>Ahmed Mahmoud Abouelmawahwb </h3>
+                            <p> 200018900</p>
+                        </div>
+                        <button class="remove_btn"> <i class='bx bx-x-circle' ></i></button>
+                    </div>
+                    
+                    <div class="team-card">
+                        <div class="team-logo">
+                            <img src="pics/avatar.png" alt="Team Logo">
+                        </div>
+                        <div class="team-name">
+                            <h3>Abd-elrahman Shehata </h3>
+                            <p> 200018900</p>
+                        </div>
+                        <button class="remove_btn"> <i class='bx bx-x-circle' ></i></button>
+                    </div>
+                </div>
+
+                <!-- زر إضافة عضو جديد -->
+                <div class="add-member-btn">
+                    <button><i class='bx bx-plus'></i></button>
+                </div>
+
+                            <!-- المشرفين -->
+                <div class="supervisors-block">
+                <div class="supervisors">
+                    <div class="supervisor">
+                    <img src="https://i.pravatar.cc/80?u=super1" alt="مشرف" />
+                    <div>
+                        <p><strong>DR/ Alaa Eldeen</strong></p>
+                        <span>DOC</span>
+                    </div>
+                    </div>
+
+                    <div class="supervisor">
+                    <img src="https://i.pravatar.cc/80?u=super2" alt="مساعد مشرف" />
+                    <div>
+                        <p><strong>Eng/ Aya Taha</strong></p>
+                        <span> T.A</span>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const previewContainer = document.getElementById('previewContainer');
+        const sendBtn = document.getElementById('sendBtn');
+        const successMessage = document.getElementById('successMessage');
+
+        let selectedFiles = [];
+
+        fileInput.addEventListener('change', () => {
+            successMessage.style.display = 'none';
+
+            selectedFiles = [...selectedFiles, ...Array.from(fileInput.files)];
+            renderPreviews();
+
+            fileInput.value = ''; // clear input to allow re-adding same file again if needed
+        });
+
+        function renderPreviews() {
+            previewContainer.innerHTML = '';
+
+            selectedFiles.forEach((file, index) => {
+            const previewItem = document.createElement('div');
+            previewItem.classList.add('preview-item');
+
+            // remove button
+            const removeBtn = document.createElement('button');
+            removeBtn.classList.add('remove-btn');
+            removeBtn.innerHTML = '×';
+            removeBtn.addEventListener('click', () => {
+                selectedFiles.splice(index, 1);
+                renderPreviews();
+            });
+
+            previewItem.appendChild(removeBtn);
+
+            // image or icon
+            if (file.type.startsWith('image/')) {
+                const img = document.createElement('img');
+                img.src = URL.createObjectURL(file);
+                previewItem.appendChild(img);
+            } else {
+                const icon = document.createElement('i');
+                icon.className = "fas fa-file-alt fa-3x";
+                icon.style.color = "#007bff";
+                previewItem.appendChild(icon);
+            }
+
+            // progress bar container
+            const progressContainer = document.createElement('div');
+            progressContainer.classList.add('progress-bar-container');
+            const progressBar = document.createElement('div');
+            progressBar.classList.add('progress-bar');
+            progressContainer.appendChild(progressBar);
+            previewItem.appendChild(progressContainer);
+
+            // simulate upload
+            setTimeout(() => {
+                progressBar.style.width = '100%'; // simulate full progress
+            }, 500);
+
+            // filename
+            const name = document.createElement('div');
+            name.classList.add('file-name');
+            name.textContent = file.name;
+            previewItem.appendChild(name);
+
+            previewContainer.appendChild(previewItem);
+            });
+        }
+
+        sendBtn.addEventListener('click', () => {
+            if (selectedFiles.length === 0) {
+            alert("من فضلك اختر ملفات أولاً");
+            } else {
+            successMessage.style.display = 'block';
+            }
+        });
+
+
+
+
+
+            // لما يضغط على زر الحذف
+    document.querySelectorAll('.remove_btn').forEach(button => {
+    button.addEventListener('click', function () {
+        const memberRow = this.closest('.team-card');
+        memberRow.remove();
+    });
+    });
+        </script>
+    
+</body>
+</html>

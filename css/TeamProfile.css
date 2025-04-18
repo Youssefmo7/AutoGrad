@@ -1,0 +1,545 @@
+.profile, .seminars{
+    margin:20px;
+    display: flex;
+    gap: 60px;
+    /* flex-wrap: wrap; */
+}
+.profile{
+    overflow-x: auto;
+}
+.profile .ProjectProfile{
+    background-color: white;
+    padding: 10px;
+    border: solid 0.5px #9BD8FF;
+    border-radius: 8px;
+    max-width: 55%;
+}
+.profile .ProjectProfile .ProjectTitle{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right:10px ;
+
+}
+.profile .ProjectProfile .ProjectTitle .ProjectTitleentity p{
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+.profile .ProjectProfile .ProjectTitle .pr{
+    margin-top: 10px;
+    font-weight: bold;
+}
+.profile .ProjectProfile .academicInfo{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 15px;
+    padding: 5px;
+    border: 2px dashed #aaa;
+    margin-top: 50px;
+}
+.profile .team{
+    min-width: 40%;
+    padding: 10px;
+    background-color: white;
+    color: #133E87;
+    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    /*  border: solid 0.5px #9BD8FF;*/
+    border-radius: 10px;
+    .tmp{gap:1px;}
+    h2, h3{
+        text-align: center;
+    }
+    
+}
+
+
+
+
+.fa-bell{
+    font-size: 30px;
+}
+
+
+
+
+
+.Grad_Card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #9BD8FF;
+    margin: 5px 10px 5px 10px ;
+    min-width: 25%;
+    max-width: 40%;
+    padding: 10px;
+    border-radius: 10px;
+    color: #133E87;
+    
+}
+
+
+
+.Grad{
+    display: inline-block;
+    padding: 10px;
+    align-items: center;
+
+    .tmp{gap: 1;}
+    p{
+        font-weight: 500;
+        font-size: 32px;
+        text-align: center;
+        color: #000000;
+    
+    }
+    .tmp{gap: 1;}
+    span{
+        font-size: 25px;
+        color: #817f7f;
+    }
+}
+.contact{
+    width: 100%;
+    min-width: 50%;
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 0.5px #9BD8FF;
+    color: #133E87;
+    .tmp{gap:1;}
+    ul{
+        white-space: nowrap;
+        font-weight: bold;
+        color: #133E87;
+    }
+
+    .tmp{gap:1;}
+    h2{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+.bio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:  -webkit-auto;
+    padding: 5px;
+    margin: 5px;
+    font-weight: 100;
+    border-bottom: solid;
+    padding-bottom: 10px;
+}
+
+.imgbox{
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 100px;
+    .tmp{gap: 1;}
+    img{
+
+        width: 100px;
+        height: 100px;
+
+    }
+}
+
+
+.ProjectTitle{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+
+
+.Members_stack{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.team h2{
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.team hr{
+
+    margin: 20px auto;
+    border: none;
+    height: 1px;
+    background-color: #90CAF9;
+    width: 100%;
+
+}
+.team-name{
+    color:black;
+    text-align: center;
+    margin-left: 10px;
+    font-weight: 100;
+}
+.team-card{
+
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    align-items: center;
+
+    width: 100%;
+    border-radius: 5px;
+    justify-content: space-between;
+    border-bottom: solid 1px #90CAF9;
+    box-shadow: 5px 15px 8px -11px #8080807d;
+}
+
+.team-logo{
+    margin: 5px;
+}
+.team-logo img{
+    width: 60px;
+    height: 60px;
+
+}
+
+#leader{
+    border:solid 1px  #9cd4a0 ;
+    justify-content: flex-start;
+}
+
+
+
+
+  /* زر الحذف */
+.remove_btn {
+font-size: 14px;
+background-color: transparent;
+color: #dc3545;
+border: none;
+cursor: pointer;
+padding: 6px 10px;
+border-radius: 6px;
+transition: 0.2s;
+margin-right: 10px; /* خليه بعد المحتوى */
+}
+
+
+
+.supervisors-block {
+margin-top: 40px;
+text-align: center;
+}
+
+.supervisors-block h3 {
+font-size: 20px;
+margin-bottom: 20px;
+}
+
+.supervisors {
+display: flex;
+gap: 50px;
+flex-wrap: wrap;
+text-align-last: justify;
+margin: 70px auto 0px auto;
+justify-content: space-evenly;
+border-top: solid 0.5px #9BD8FF;
+padding-top: 15px;
+
+}
+
+.supervisor {
+display: flex;
+align-items: center;
+gap: 12px;
+text-align: right;
+}
+
+.supervisor img {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+border: 2px solid #ccc;
+}
+
+.supervisor p {
+margin: 0;
+font-size: 16px;
+font-weight: bold;
+}
+
+.supervisor span {
+font-size: 13px;
+color: #888;
+}
+
+
+/* زر الإضافة تحت الكروت */
+.add-member-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    }
+
+.add-member-btn button {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+    background-color: #9cd4a0;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-member-btn button:hover {
+    background-color: #218838;
+}
+
+
+
+
+/* upload section  */
+.UploadProposal{
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    width: 60%;
+}
+
+.upload-preview-row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.upload-box {
+width: 80px;
+height: 80px;
+border: 2px dashed #aaa;
+border-radius: 15px;
+background-color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.upload-box:hover {
+border-color: #007bff;
+background-color: #e6f0ff;
+}
+
+.upload-box i {
+font-size: 30px;
+color: #007bff;
+transition: transform 0.3s ease;
+}
+
+.upload-box:hover i {
+transform: translateY(-3px);
+}
+
+input[type="file"] {
+display: none;
+}
+
+.preview-item {
+display: flex;
+flex-direction: column;
+align-items: center;
+background: #fff;
+padding: 10px;
+border-radius: 10px;
+box-shadow: 0 0 5px rgba(0,0,0,0.1);
+width: 95px;
+position: relative;
+}
+
+.preview-item img,
+.preview-item i {
+max-width: 70px;
+max-height: 70px;
+border-radius: 8px;
+margin-bottom: 5px;
+}
+
+.file-name {
+font-size: 12px;
+text-align: center;
+word-break: break-word;
+}
+
+.remove-btn {
+position: absolute;
+top: 5px;
+right: 5px;
+background-color: #ff4d4d;
+color: white;
+border: none;
+border-radius: 50%;
+width: 22px;
+height: 22px;
+font-size: 14px;
+cursor: pointer;
+}
+
+.progress-bar-container {
+width: 100%;
+height: 5px;
+background-color: #e0e0e0;
+border-radius: 5px;
+margin-top: 5px;
+}
+
+.progress-bar {
+height: 100%;
+width: 0;
+background-color: #28a745;
+border-radius: 5px;
+}
+
+.buttons {
+display: flex;
+gap: 10px;
+margin-right: 10px;
+}
+
+.buttons button {
+padding: 10px;
+font-size: 12px;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.send-btn {
+background-color: #28a745;
+color: white;
+}
+
+.send-btn:hover {
+background-color: #218838;
+}
+
+.clear-btn {
+background-color: #dc3545;
+color: white;
+}
+
+.clear-btn:hover {
+background-color: #c82333;
+}
+
+.message {
+font-size: 16px;
+color: #28a745;
+margin-top: 10px;
+display: none;
+}
+
+
+
+
+
+
+
+/*    feedback section     */
+.feedback-section {
+width: 100%;
+max-width: 700px;
+margin: 20px auto;
+margin-top: 100px;
+padding: 20px;
+background-color: #ffffff;
+border-radius: 15px;
+box-shadow: 0 0 10px rgba(0,0,0,0.08);
+font-family: 'Cairo', sans-serif;
+direction: rtl;
+}
+
+.feedback-section h2 {
+font-size: 22px;
+margin-bottom: 15px;
+text-align: center;
+color: #333;
+}
+
+.feedback-card {
+border-radius: 10px;
+padding: 15px 20px;
+margin-bottom: 15px;
+/*position: relative;*/
+background-color: #f8f9fa;
+border-right: 5px solid #ccc;
+transition: 0.3s;
+}
+
+.feedback-card.success {
+border-right-color: #28a745;
+background-color: #e9f9ec;
+}
+
+.feedback-card.warning {
+border-right-color: #ffc107;
+background-color: #fffbea;
+}
+
+.feedback-card.error {
+border-right-color: #dc3545;
+background-color: #fdecec;
+}
+
+.feedback-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 8px;
+font-size: 14px;
+color: #555;
+}
+
+.doctor-info {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.doctor-info img {
+width: 35px;
+height: 35px;
+border-radius: 50%;
+border: 2px solid #ddd;
+}
+
+.feedback-body {
+font-size: 16px;
+color: #222;
+line-height: 1.6;
+}
+
+.feedback-date {
+font-size: 13px;
+color: #888;
+}
