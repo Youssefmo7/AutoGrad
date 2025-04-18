@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/commons.css">
+    <link rel="stylesheet" href="css/PickTeam.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Pick Team</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header bar -->
+
+        <header>
+
+            <button class="back-btn" onclick="goBack()"><i class='bx bx-arrow-back'></i>Back</button>
+            <div class="slogan">  
+                <p>"Automating Your Graduation Success"</p> 
+            </div>
+            <button class="PickAuto-btn" onclick="openModal()">Pick Team Auto</button>
+
+        </header>
+
+
+        <div class="ShowStd">
+            <div class="std-card">
+                <div class="std-info">
+                    <div class="StdPic">
+                        <img src="pics/omara.jpeg" alt="Student pic Logo">
+                    </div>
+                    <div class="info">
+                        <h3>Ibrahem Mohamed Omara</h3>
+                        <p>Track: WebDevelopment</p>
+                        <p>Major: CS</p>
+                        <p>GPA: 3.03</p>
+                    </div>
+                </div>
+                <button class="Add-btn">Add</i></button>
+            </div>
+
+
+            <div class="std-card">
+                <div class="std-info">
+                    <div class="StdPic">
+                        <img src="pics/kimo.jpeg" alt="Student pic Logo">
+                    </div>
+                    <div class="info">
+                        <h3>Kareem Ashraf </h3>
+                        <p>Track: Back-end developer</p>
+                        <p>Major: CS</p>
+                        <p>GPA: 3.63</p>
+                    </div>
+                </div>
+                <button class="Add-btn">Add</i></button>
+            </div>
+
+
+            <div class="std-card">
+                <div class="std-info">
+                    <div class="StdPic">
+                        <img src="pics/avatar.png" alt="Student pic Logo">
+                    </div>
+                    <div class="info">
+                        <h3>Youssef Mohamed Ramadan</h3>
+                        <p>Track: Front-end Development</p>
+                        <p>Major: CS</p>
+                        <p>GPA: 3.53</p>
+                    </div>
+                </div>
+                <button class="Add-btn">Add</i></button>
+            </div>
+
+
+            <div class="std-card">
+                <div class="std-info">
+                    <div class="StdPic">
+                        <img src="pics/me.png" alt="Student pic Logo">
+                    </div>
+                    <div class="info">
+                        <h3>Ahmed Mahmoud Mohamed</h3>
+                        <p>Track: App Developer</p>
+                        <p>Major: CS</p>
+                        <p>GPA: 2.93</p>
+                    </div>
+                </div>
+                <button class="Add-btn">Add</i></button>
+            </div>
+
+
+            <div class="std-card">
+                <div class="std-info">
+                    <div class="StdPic">
+                        <img src="pics/dhdh.jpeg" alt="Student pic Logo">
+                    </div>
+                    <div class="info">
+                        <h3>Abd-elrahman  mohamed shehata </h3>
+                        <p>Track: WebDevelopment</p>
+                        <p>Major: IS</p>
+                        <p>GPA: 3.03</p>
+                    </div>
+                </div>
+                <button class="Add-btn">Add</i></button>
+            </div>
+
+
+            <div class="std-card">
+                <div class="std-info">
+                    <div class="StdPic">
+                        <img src="pics/me2.JPG" alt="Student pic Logo">
+                    </div>
+                    <div class="info">
+                        <h3>Hassan mokhtaar ateq</h3>
+                        <p>Track: WebDevelopment</p>
+                        <p>Major: CS</p>
+                        <p>GPA: 3.03</p>
+                    </div>
+                </div>
+                <button class="Add-btn">Add</i></button>
+            </div>
+            
+        </div>
+
+
+        <!-- 🔲 Modal -->
+        <div class="modal-overlay" id="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">✖</span>
+                <h3>Your team members</h3>
+                <div class="team">
+                    <hr>
+                        <div class="Members_stack">
+                        
+                            <div class="team-card">
+                                <div class="team-logo">
+                                    <img src="pics/omara.jpeg" alt="Team Logo">
+                                </div>
+                                <div class="team-name">
+                                    <h3>Ibrahem Mohamed Omara</h3>
+                                    <p> 200017723</p>
+                                </div>
+                                <button class="remove_btn"> <i class='bx bx-x-circle' ></i></button>
+                            </div>
+                            <div class="team-card">
+                                <div class="team-logo">
+                                    <img src="pics/avatar.png" alt="Team Logo">
+                                </div>
+                                <div class="team-name">
+                                    <h3>Youssef Mohamed Ramadan</h3>
+                                    <p> 200017720</p>
+                                </div>
+                                <button class="remove_btn"> <i class='bx bx-x-circle' ></i></button>
+                            </div>
+                            <div class="team-card">
+                                <div class="team-logo">
+                                    <img src="pics/me.png" alt="Team Logo">
+                                </div>
+                                <div class="team-name">
+                                    <h3>Ahmed Mahmoud Abouelmawahwb </h3>
+                                    <p> 200018900</p>
+                                </div>
+                                <button class="remove_btn"> <i class='bx bx-x-circle' ></i></button>
+                            </div>
+                            
+                            <div class="team-card">
+                                <div class="team-logo">
+                                    <img src="pics/dhdh.jpeg" alt="Team Logo">
+                                </div>
+                                <div class="team-name">
+                                    <h3>Abd-elrahman Shehata </h3>
+                                    <p> 200018900</p>
+                                </div>
+                                <button class="remove_btn"> <i class='bx bx-x-circle' ></i></button>
+                            </div>
+
+                            <div class="Btn">
+                                <button class="A-btn">Accept</i></button>
+                                <button class="R-btn">Reject</i></button>
+                            </div>
+                            
+                        </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+    </div>
+
+
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+        
+        function openModal() {
+            document.getElementById("modal").style.display = "flex";
+        }
+        
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+                    // لما يضغط على زر الحذف
+    document.querySelectorAll('.remove_btn').forEach(button => {
+    button.addEventListener('click', function () {
+        const memberRow = this.closest('.team-card');
+        memberRow.remove();
+    });
+    });
+    </script>
+</body>
+</html>

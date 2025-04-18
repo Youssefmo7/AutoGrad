@@ -1,0 +1,274 @@
+header{
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    justify-content: flex-start;
+    background-color: #e2e2e259;
+
+}
+
+.back-btn{
+    padding: 10px;
+    width: 15%;
+    font-weight: 400;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.2s;
+    color: #0D6FC2;
+}
+
+.back-btn:hover{
+    background-color: #bdb9b9;
+}
+
+.PickAuto-btn{
+    padding: 10px;
+    width: 15%;
+    font-weight: 500;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.2s;
+    color: #0D6FC2;
+    margin: 10px;
+}
+
+.PickAuto-btn:hover{
+    background-color: #bdb9b9;
+}
+
+.slogan p{
+    font-size: 20px;
+}
+
+
+.ShowStd{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    width: 80%;
+    /* background-color: #e2e2e259;*/
+    border-radius: 5px;
+}
+
+
+
+.std-card{
+    display: flex;
+    background-color: #FFFFFF;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px 30px;
+    justify-content: space-between;
+    border-bottom: solid 1px #f99090;
+    box-shadow: 5px 15px 8px -11px #8080807d;
+}
+
+.std-info{
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+}
+.StdPic{
+    display: flex;
+    justify-content: center;
+
+    width: 100px;
+    height: 100px; 
+    border-radius: 50%;
+}
+.StdPic img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.info{
+    color: #133E87;
+    padding: 10px;
+}
+
+
+.Add-btn{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.Add-btn:hover{
+    background-color: #3f9341;
+}
+
+
+
+/* 🔲 Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 55%;
+    /* max-width: 500px;*/
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    color: red;
+    }
+
+
+
+
+
+
+
+
+.Members_stack{
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+flex-wrap: nowrap;
+}
+.profile .team{
+        min-width: 40%;
+        padding: 10px;
+        background-color: white;
+        color: #133E87;
+        box-shadow: 0 0 10px rgba(0,0,0,0.08);
+        /*  border: solid 0.5px #9BD8FF;*/
+        border-radius: 10px;
+        .tmp{gap:1px;}
+        h2, h3{
+            text-align: center;
+        }
+        
+}
+.team h2{
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.team hr{
+
+    margin: 20px auto;
+    border: none;
+    height: 1px;
+    background-color: #90CAF9;
+    width: 100%;
+
+}
+.team-name{
+    color:black;
+    text-align: center;
+    margin-left: 10px;
+    font-weight: 100;
+}
+.team-card{
+
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    align-items: center;
+
+    width: 100%;
+    border-radius: 5px;
+    justify-content: space-between;
+    border-bottom: solid 1px #90CAF9;
+    box-shadow: 5px 15px 8px -11px #8080807d;
+}
+
+.team-logo{
+    margin: 5px;
+}
+.team-logo img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+}  
+.remove_btn {
+    font-size: 14px;
+    background-color: transparent;
+    color: #dc3545;
+    border: none;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: 0.2s;
+    margin-right: 10px; /* خليه بعد المحتوى */
+}
+
+.remove_btn:hover{
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+.Btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.A-btn{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.A-btn:hover{
+    background-color: #3f9341;
+}
+
+.R-btn{
+    background-color: #d31c1c;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.R-btn:hover{
+    background-color: #933f3f;
+}
