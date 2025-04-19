@@ -1,7 +1,7 @@
 .profile, .seminars{
-    margin: 40px 100px;
+    margin: 40px 50px;
     display: flex;
-    gap: 60px;
+    gap: 20px;
 }
 .profile .info{
     background-color: white;
@@ -19,7 +19,7 @@
     margin-top: 5px;
 }
 .profile .info .id .pr{
-    margin-top: 10px;
+    margin: 10px 0;
     font-weight: bold;
 }
 .profile .info .academicInfo{
@@ -31,7 +31,7 @@
     .tracks, .major, .contact{
         min-width: 35%;
         max-width: 60%;
-        padding: 20px;
+        padding: 20px 40px;
         border-radius: 10px;
         border: solid 0.5px #9BD8FF;
         color: #133E87;
@@ -44,14 +44,25 @@
     }
 }
 .profile .team{
-    padding: 20px;
+    padding: 20px 30px;
     background-color: white;
     color: #133E87;
     border: solid 0.5px #9BD8FF;
     border-radius: 10px;
+    max-width: 45%;
     .tmp{gap:1px;}
-    h2, h3{
+    h2{
         text-align: center;
+    }
+    h3{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    ol{
+        margin-top: 10px;
+        h4{
+            margin-bottom: 10px;
+        }
     }
     .supervisors{
         display: flex;
@@ -85,15 +96,6 @@
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
+    gap: 10px;
     margin-bottom: 30px;
 }
-/* .seminars .weeklyseminar .date .day span:last-child{
-    display: inline-block;
-    padding: 5px;
-    border-radius: 50%;
-    background-color: #133E87;
-    color: white;
-    text-align: center;
-    width: 30px;
-    height: 30px;
-} */
