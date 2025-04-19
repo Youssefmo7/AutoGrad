@@ -51,6 +51,21 @@
 .grades{
     background-color: white;
     padding: 20px;
+    width: 40%;
+    position: relative;
+}
+.grades .marks{
+    background-color: rgba(45, 204, 159, 0.9);
+    position: absolute;
+    z-index: 999;
+    height: 100%;
+    width: 100px;
+    right: 0;
+    top: 0;
+    border-radius: 0 0 60px 60px;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
 }
 .grades hr{
     background-color: #2DCC9F;
@@ -60,18 +75,29 @@
 .student, #teamLeader{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     border-radius: 10px;
     border-bottom: solid 1px #2DCC9F;
     box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.3);
     padding: 10px;
     justify-self: center;
-    gap: 65px;
+    gap: 40px;
     width: 350px;
     margin-top: 10px;
+}
+.student #mark{
+    z-index: 1000;
+    font-weight: bold;
+}
+.student #tmark{
+    z-index: 1000;
+    color: grey;
+    font-weight: bold;
 }
 #teamLeader {
     width: 80%;
     text-align: center;
     gap: 25%;
     margin-top: 30px;
+    justify-content: unset;
 }
