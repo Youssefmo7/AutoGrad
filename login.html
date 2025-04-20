@@ -35,7 +35,7 @@
         </div>
         <div class="form-box register">
             <h1>Registration</h1>
-            <form  class="formReg" action="">
+            <form  class="formReg" onsubmit="return handleFormSubmit(event)">
                 <div class="input-box" id="box-1">
                     <input type="text" placeholder="First name" required>
                     <i class="bx bxs-user"></i>
@@ -68,6 +68,13 @@
                     <input type="password" placeholder="Confirm Password" required>
                     <i class="bx bxs-lock-alt"></i>
                 </div>
+
+                <div class="role-buttons">
+                    <button type="button" onclick="selectRole('student')" id="studentBtn">Student</button>
+                    <button type="button" onclick="selectRole('doctor')" id="doctorBtn">Supervisor</button>
+                </div>
+            
+
                 <button type="submit" class="btn">Register</button>
             </form>
             <p>or Register with Social Platforms</p>

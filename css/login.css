@@ -249,6 +249,43 @@ img{
     box-shadow: none;
 }
 
+/*-------------------------------------------------------*/
+.role-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.role-buttons button {
+width: 48%;
+padding: 10px 50px;
+border: 2px solid #ccc;
+background-color: #f0f0f0;
+border-radius: 8px;
+cursor: pointer;
+transition: 0.3s;
+font-size: 15px;
+}
+
+.role-buttons button.active {
+background-color: #007bff;
+color: white;
+border-color: #007bff;
+}
+
+.form-box.register h1{
+    margin: 10px;
+}
+
+
+
+/*-------------------------------------------------------*/
+
 @media screen and (max-width: 650px) {
     .container {
         height: calc(100vh - 40px);
