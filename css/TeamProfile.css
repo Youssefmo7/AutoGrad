@@ -12,7 +12,7 @@
     padding: 10px;
     border: solid 0.5px #9BD8FF;
     border-radius: 8px;
-    max-width: 55%;
+    width: 55%;
 }
 .profile .ProjectProfile .ProjectTitle{
     display: flex;
@@ -23,6 +23,7 @@
     justify-content: space-between;
     padding-left: 10px;
     padding-right:10px ;
+    max-height: 155px;
 
 }
 .profile .ProjectProfile .ProjectTitle .ProjectTitleentity p{
@@ -139,9 +140,13 @@
 }
 
 .imgbox{
-    max-width: 200px;
-    max-height: 200px;
+    width: 145px;
+    height: 145px;
     border-radius: 100px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
     .tmp{gap: 1;}
     img{
 
@@ -468,7 +473,7 @@ display: none;
 /*    feedback section     */
 .feedback-section {
 width: 100%;
-max-width: 700px;
+
 margin: 20px auto;
 margin-top: 100px;
 padding: 20px;
@@ -542,4 +547,34 @@ line-height: 1.6;
 .feedback-date {
 font-size: 13px;
 color: #888;
+}
+
+
+
+
+
+
+
+
+/*تعديل الاسم و اللوجو و البايو */
+.edit-icon {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #007bff;
+    font-size: 16px;
+}
+
+.change-logo-btn {
+    margin-top: 5px;
+}
+
+.change-logo-label {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 5px;
 }

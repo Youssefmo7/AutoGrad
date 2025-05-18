@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/commons.css">
     <link rel="stylesheet" href="css/TeamProfile.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Team Profile</title>
+    <title>Edit Team Profile</title>
 </head>
 <body>
     <div class="container">
@@ -57,16 +57,32 @@
             <div class="ProjectProfile">
 
                 <div class="ProjectTitle">
-
                     <div class="identity">
-                        <h3 class="Project_name">AUTO GRAD </h3>
+                        <h3 class="Project_name" id="teamName">
+                            AUTO GRAD
+                            <i class="fa-solid fa-pen-to-square edit-icon" onclick="editTeamName()" title="تعديل الاسم"></i>
+                        </h3>
+                        <input type="text" id="teamNameInput" style="display: none;" />
                     </div>
-                    <div class="imgbox"><img src="/images/logo.png" alt=""></div>
+
+                    <div class="imgbox">
+                        <img id="teamLogo" src="/images/logo.png" alt="Team Logo">
+                        <div class="change-logo-btn">
+                            <label for="logoUpload" class="change-logo-label">
+                                <i class="fa-solid fa-camera"></i>   Logo
+                            </label>
+                            <input type="file" id="logoUpload" style="display: none;" onchange="changeTeamLogo(event)">
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bio">
-                    senior professor with 10 years of experience supervising graduation projects. He is organized, thorough, and passionate about guiding students to success  .
+                <div class="bio" id="teamBio">
+                    senior professor with 10 years of experience supervising graduation projects...
+                    <i class="fa-solid fa-pen-to-square edit-icon" onclick="editBio()" title="تعديل النبذة"></i>
                 </div>
+                <textarea id="teamBioInput" style="display: none; width: 100%; margin-top: 10px;" rows="4"></textarea>
+                <button id="saveBioBtn" style="display: none;" onclick="saveBio()">حفظ</button>
+
                 
                 <div class="academicInfo">
 
@@ -210,7 +226,12 @@
                         <span> T.A</span>
                     </div>
                     </div>
+
+
                 </div>
+                <div class="add-member-btn">
+                    <button><a href="PickTeam.html"><i class='bx bx-plus'></i></a></button>
+                </div> 
                 </div>
 
             </div>
@@ -311,43 +332,91 @@
 
 
             // لما يضغط على زر الحذف
-    document.querySelectorAll('.remove_btn').forEach(button => {
-    button.addEventListener('click', function () {
-        const memberRow = this.closest('.team-card');
-        memberRow.remove();
-    });
-    });
+        document.querySelectorAll('.remove_btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const memberRow = this.closest('.team-card');
+            memberRow.remove();
+        });
+        });
 
-    // عرض الفيدباك من localStorage
+
+        // تعديل الاسم و اللوجو و البايو 
+
+        function changeTeamLogo(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById("teamLogo").src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function editTeamName() {
+            const nameElement = document.getElementById("teamName");
+            const input = document.getElementById("teamNameInput");
+            input.value = nameElement.innerText.trim();
+            nameElement.style.display = "none";
+            input.style.display = "inline";
+            input.onblur = function () {
+                nameElement.innerHTML = input.value + `<i class="fa-solid fa-pen-to-square edit-icon" onclick="editTeamName()" title="تعديل الاسم"></i>`;
+                input.style.display = "none";
+                nameElement.style.display = "block";
+            };
+        }
+
+        function editBio() {
+            const bio = document.getElementById("teamBio");
+            const input = document.getElementById("teamBioInput");
+            const saveBtn = document.getElementById("saveBioBtn");
+            input.value = bio.innerText.trim();
+            bio.style.display = "none";
+            input.style.display = "block";
+            saveBtn.style.display = "inline-block";
+        }
+
+        function saveBio() {
+            const input = document.getElementById("teamBioInput");
+            const bio = document.getElementById("teamBio");
+            const saveBtn = document.getElementById("saveBioBtn");
+            bio.innerHTML = input.value + `<i class="fa-solid fa-pen-to-square edit-icon" onclick="editBio()" title="تعديل النبذة"></i>`;
+            bio.style.display = "block";
+            input.style.display = "none";
+            saveBtn.style.display = "none";
+        }
+
+
+            // عرض الفيدباك من localStorage
     const feedbackContainer = document.querySelector(".DoctorFeedback .feedback-section");
 
-    function renderFeedback() {
-        const feedbacks = JSON.parse(localStorage.getItem("teamFeedbacks") || "[]");
+function renderFeedback() {
+    const feedbacks = JSON.parse(localStorage.getItem("teamFeedbacks") || "[]");
 
-        feedbacks.forEach(fb => {
-            const card = document.createElement("div");
-            card.className = "feedback-card success";
-            card.innerHTML = `
-                <div class="feedback-header">
-                    <div class="doctor-info">
-                        <img src="https://i.pravatar.cc/40?u=${encodeURIComponent(fb.doctor)}" alt="دكتور" />
-                        <strong>${fb.doctor}</strong>
-                    </div>
-                    <span class="feedback-date">${fb.date}</span>
+    feedbacks.forEach(fb => {
+        const card = document.createElement("div");
+        card.className = "feedback-card success";
+        card.innerHTML = `
+            <div class="feedback-header">
+                <div class="doctor-info">
+                    <img src="https://i.pravatar.cc/40?u=${encodeURIComponent(fb.doctor)}" alt="دكتور" />
+                    <strong>${fb.doctor}</strong>
                 </div>
-                <div class="feedback-body">
-                    ✅ ${fb.content}
-                </div>
-            `;
-            feedbackContainer.appendChild(card);
-        });
-    }
+                <span class="feedback-date">${fb.date}</span>
+            </div>
+            <div class="feedback-body">
+                ✅ ${fb.content}
+            </div>
+        `;
+        feedbackContainer.appendChild(card);
+    });
+}
 
-    // تشغيله مباشرة
-    renderFeedback();
+// تشغيله مباشرة
+renderFeedback();
 
-    
-        </script>
+
+    </script>
     
 </body>
 </html>

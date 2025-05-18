@@ -11,7 +11,7 @@ body{
     background: linear-gradient(90deg, #e2e2e2, #4376cd);
 }
 .container{
-
+    overflow: auto;
     position: relative;
     width : 95%;
     min-height : 800px;

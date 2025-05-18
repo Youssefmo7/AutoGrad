@@ -63,6 +63,71 @@
                         <li>Proposal</li>
                     </ul>
                 </div>
+
+                <div class="proposal">
+
+
+                    <div class="team-files-section">
+                        <h3>📁 ملفات الفريق المرفوعة</h3>
+                        <div class="team-files-container">
+                            <!-- ملف واحد كمثال -->
+                            <div class="team-file-card">
+                            <div class="file-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="file-details">
+                                <p class="file-name">Proposal Document.pdf</p>
+                                <p class="file-date">10 مايو 2025</p>
+                                <div class="file-actions">
+                                <a href="uploads/proposal.pdf" target="_blank" class="view-btn">معاينة</a>
+                                <a href="uploads/proposal.pdf" download class="download-btn">تحميل</a>
+                                </div>
+                            </div>
+                            </div>
+
+
+                            <div class="team-file-card">
+                            <div class="file-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="file-details">
+                                <p class="file-name">Proposal Document.pdf</p>
+                                <p class="file-date">10 مايو 2025</p>
+                                <div class="file-actions">
+                                <a href="uploads/proposal.pdf" target="_blank" class="view-btn">معاينة</a>
+                                <a href="uploads/proposal.pdf" download class="download-btn">تحميل</a>
+                                </div>
+                            </div>
+                            </div>
+                        
+                            <!-- تقدر تكرر الكارت دا لأي ملف جديد -->
+                        </div>
+                        </div>
+                        
+
+<!--
+                    <div class="UploadProposal">
+                        <div class="upload-preview-row" id="uploadPreviewRow">
+                            <label class="upload-box" for="fileInput">
+                                <i class="fas fa-upload"></i>
+                            </label>
+                            <div id="previewContainer" style="display: flex; gap: 20px; flex-wrap: wrap;"></div>
+                        </div>
+                            <input type="file" id="fileInput" name="files" multiple />
+                        <div class="buttons">
+                            <button class="send-btn" id="sendBtn">Submit</button>
+                        </div>
+                        <div class="message" id="successMessage">✅ تم رفع الملفات بنجاح!</div>
+                    </div>
+                    <div class="Grad_Card">
+                        <h3 style="text-align: center;">Total Grads</h3>
+                        <div class="Grad"><p>000<span>/150</span></p></div>
+                    </div>
+
+-->
+                </div>
+
+            <!--
                 <div id="teamLeader">
                     <div class="imagebox"><img src="images/Generic avatar.png" alt=""></div>
                     <div class="nameId">
@@ -70,8 +135,14 @@
                         <h4>Team Leader</h4>
                     </div>
                 </div>
-                <div class="proposal">
+
+            -->
+                <div class="feedback-form">
+                    <h3>Send Feedback to Team</h3>
+                    <textarea id="feedbackText" placeholder="Write your feedback here..."></textarea>
+                    <button onclick="submitFeedback()">Send</button>
                 </div>
+
             </div>
             <div class="grades">
                 <div class="marks">Grades</div>
@@ -127,6 +198,80 @@
                 e.target.classList.add('selected');
             });
         });
+
+
+
+
+        // uploaded files
+
+        // بيانات الملفات بشكل مبدأي (تقدر تغيرها لاحقًا من السيرفر)
+const teamFiles = [
+    {
+        fileName: "Proposal.pdf",
+        uploadedDate: "2025-05-15",
+        fileUrl: "team_files/Proposal.pdf"
+    },
+    {
+        fileName: "SystemDesign.docx",
+        uploadedDate: "2025-05-16",
+        fileUrl: "team_files/SystemDesign.docx"
+    }
+];
+
+// نجيب الكونتينر اللي هنعرض فيه الملفات
+const teamFilesContainer = document.getElementById("team-files");
+
+// بنلف على كل ملف ونبني الكارت الخاص بيه
+teamFiles.forEach(file => {
+    const card = document.createElement("div");
+    card.classList.add("file-card");
+
+    card.innerHTML = `
+        <div class="file-header">
+            <i class="fas fa-file-alt"></i>
+            <h4>${file.fileName}</h4>
+        </div>
+        <p>📅 Uploaded: ${file.uploadedDate}</p>
+        <div class="file-actions">
+            <a href="${file.fileUrl}" target="_blank" class="open-btn">
+                <i class="fas fa-eye"></i> Open
+            </a>
+            <a href="${file.fileUrl}" download class="download-btn">
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
+    `;
+
+    teamFilesContainer.appendChild(card);
+});
+
+
+    //send feedback
+
+    function submitFeedback() {
+    const feedbackText = document.getElementById("feedbackText").value.trim();
+    if (!feedbackText) {
+        alert("من فضلك اكتب الفيدباك قبل الإرسال");
+        return;
+    }
+
+    const doctorName = "د. أحمد السيد"; // غيره حسب اسم الدكتور الفعلي
+    const feedback = {
+        doctor: doctorName,
+        content: feedbackText,
+        date: new Date().toISOString().split('T')[0]
+    };
+
+    // حفظ الفيدباك
+    const allFeedback = JSON.parse(localStorage.getItem("teamFeedbacks") || "[]");
+    allFeedback.push(feedback);
+    localStorage.setItem("teamFeedbacks", JSON.stringify(allFeedback));
+
+    // الانتقال لصفحة TeamProfile
+   // window.location.href = "TeamProfile.html";
+}
+
+
     </script>
 </body>
 </html>
