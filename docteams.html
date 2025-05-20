@@ -155,7 +155,10 @@
                             <h5>Ahmed Ali Ramdan</h5>
                             <h5>200019942</h5>
                         </div>
-                        <span id="mark">00<span id="tmark"> / 50</span></span>
+                        <div class="grade-inputs">
+                            <label>S1: <input type="number" min="0" max="150" onchange="saveGrade(this, '200019942', 's1')"></label>
+                            <label>S2: <input type="number" min="0" max="150" onchange="saveGrade(this, '200019942', 's2')"></label>
+                        </div>
                     </div>
                     <div class="student">
                         <div class="imagebox"><img src="images/Generic avatar.png" alt=""></div>
@@ -163,7 +166,10 @@
                             <h5>Ahmed Ali Ramdan</h5>
                             <h5>200019942</h5>
                         </div>
-                        <span id="mark">00<span id="tmark"> / 50</span></span>
+                        <div class="grade-inputs">
+                            <label>S1: <input type="number" min="0" max="150" onchange="saveGrade(this, '200019942', 's1')"></label>
+                            <label>S2: <input type="number" min="0" max="150" onchange="saveGrade(this, '200019942', 's2')"></label>
+                        </div>
                     </div>
                     <div class="student">
                         <div class="imagebox"><img src="images/Generic avatar.png" alt=""></div>
@@ -171,7 +177,10 @@
                             <h5>Ahmed Ali Ramdan</h5>
                             <h5>200019942</h5>
                         </div>
-                        <span id="mark">00<span id="tmark"> / 50</span></span>
+                        <div class="grade-inputs">
+                            <label>S1: <input type="number" min="0" max="150" onchange="saveGrade(this, '200019942', 's1')"></label>
+                            <label>S2: <input type="number" min="0" max="150" onchange="saveGrade(this, '200019942', 's2')"></label>
+                        </div>
                     </div>
                     <div class="student">
                         <div class="imagebox"><img src="images/Generic avatar.png" alt=""></div>
@@ -179,7 +188,10 @@
                             <h5>Ahmed Ali Ramdan</h5>
                             <h5>200019942</h5>
                         </div>
-                        <span id="mark">00<span id="tmark"> / 50</span></span>
+                        <div class="grade-inputs">
+                            <label>S1: <input type="number" min="0" max="150" onchange="saveGrade(this, '200019942', 's1')"></label>
+                            <label>S2: <input type="number" min="0" max="150" onchange="saveGrade(this, '200019942', 's2')"></label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -268,7 +280,7 @@ teamFiles.forEach(file => {
     localStorage.setItem("teamFeedbacks", JSON.stringify(allFeedback));
 
     // الانتقال لصفحة TeamProfile
-   // window.location.href = "TeamProfile.html";
+    window.location.href = "TeamProfile.html";
 }
 
 

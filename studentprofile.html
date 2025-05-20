@@ -46,7 +46,13 @@
                             <p class="number">200043358</p>
                         </div>
                     </div>
-                    <p class="pr">Computer Science Student</p>
+                    <button class="Notification-btn" onclick="openModal()">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-count" id="notificationCount">0</span>
+                    </button>
+                </div>
+                <div class="bio">
+                    senior professor with 10 years of experience supervising graduation projects. He is organized, thorough, and passionate about guiding students to success.
                 </div>
                 <div class="academicInfo">
                     <div class="major">
@@ -70,6 +76,14 @@
                             <li id="Email">student_mail@gmail.com</li>
                             <li id="phone">01007339285</li>
                         </ul>
+                    </div>
+                    <div class="Grads">
+                        <h2 style="text-align: center;">Grads</h2>
+                        <div class="num">
+                            <label>S1:<p>150</p></label>
+                            <hr class="vertical">
+                            <label>S2:<p>120</p></label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -101,6 +115,7 @@
                 <h2>Weekly Seminar</h2>
                 <div class="date">
                     <div class="hour"><i class="fa-regular fa-clock"></i> 10:00 AM</div>
+                    <hr>
                     <div class="day">
                         <i class="fa-regular fa-calendar-check"></i>
                         <span>August</span>
@@ -116,6 +131,129 @@
                 </ol>
             </div>
         </div>
+
+        <!-- 🔲 Modal -->
+        <div class="modal-overlay" id="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">✖</span>
+                <h3>Your team members</h3>
+                <div class="team">
+                    <hr>
+                        <div class="Members_stack">
+                        
+                            <div class="team-card">
+                                <div class="team-logo">
+                                    <img src="pics/omara.jpeg" alt="Team Logo">
+                                </div>
+                                <div class="team-name">
+                                    <h3>Ibrahem Mohamed Omara</h3>
+                                    <p>200017723</p>
+                                </div>
+                                <div class="team-actions">
+                                    <button class="approve_btn"><i class='bx bx-check-circle'></i></button>
+                                    <button class="remove_btn"><i class='bx bx-x-circle'></i></button>
+                                </div>
+                            </div>
+                            <div class="team-card">
+                                <div class="team-logo">
+                                    <img src="pics/omara.jpeg" alt="Team Logo">
+                                </div>
+                                <div class="team-name">
+                                    <h3>Ibrahem Mohamed Omara</h3>
+                                    <p>200017723</p>
+                                </div>
+                                <div class="team-actions">
+                                    <button class="approve_btn"><i class='bx bx-check-circle'></i></button>
+                                    <button class="remove_btn"><i class='bx bx-x-circle'></i></button>
+                                </div>
+                            </div>
+                            <div class="team-card">
+                                <div class="team-logo">
+                                    <img src="pics/omara.jpeg" alt="Team Logo">
+                                </div>
+                                <div class="team-name">
+                                    <h3>Ibrahem Mohamed Omara</h3>
+                                    <p>200017723</p>
+                                </div>
+                                <div class="team-actions">
+                                    <button class="approve_btn"><i class='bx bx-check-circle'></i></button>
+                                    <button class="remove_btn"><i class='bx bx-x-circle'></i></button>
+                                </div>
+                            </div>
+                            
+                            <div class="team-card">
+                                <div class="team-logo">
+                                    <img src="pics/omara.jpeg" alt="Team Logo">
+                                </div>
+                                <div class="team-name">
+                                    <h3>Ibrahem Mohamed Omara</h3>
+                                    <p>200017723</p>
+                                </div>
+                                <div class="team-actions">
+                                    <button class="approve_btn"><i class='bx bx-check-circle'></i></button>
+                                    <button class="remove_btn"><i class='bx bx-x-circle'></i></button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+                        function openModal() {
+            document.getElementById("modal").style.display = "flex";
+        }
+        
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+                    // لما يضغط على زر الحذف
+    document.querySelectorAll('.remove_btn').forEach(button => {
+    button.addEventListener('click', function () {
+        const memberRow = this.closest('.team-card');
+        memberRow.remove();
+    });
+    });
+
+
+
+                        // لما يضغط على زر الحذف
+                        document.querySelectorAll('.approve_btn').forEach(button => {
+    button.addEventListener('click', function () {
+        const memberRow = this.closest('.team-card');
+        memberRow.remove();
+        updateNotificationCount();
+    });
+    });
+
+            // جرس الاشعارات 
+    function updateNotificationCount() {
+        const count = document.querySelectorAll('#modal .team-card').length;
+        const countSpan = document.getElementById("notificationCount");
+        countSpan.textContent = count;
+
+        // لو صفر، نخفي الرقم
+        if (count === 0) {
+            countSpan.style.display = 'none';
+        } else {
+            countSpan.style.display = 'inline';
+        }
+    }
+
+    // استدعاء أولي عند تحميل الصفحة
+    window.onload = updateNotificationCount;
+
+    // حذف العضو
+    document.querySelectorAll('.remove_btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const memberRow = this.closest('.team-card');
+            memberRow.remove();
+            updateNotificationCount();
+        });
+    });
+    </script>
 </body>
 </html>

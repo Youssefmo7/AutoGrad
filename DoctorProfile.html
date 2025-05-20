@@ -22,13 +22,14 @@
                 <i class="fa-regular fa-user"></i>
                 <span>Profile</span>
             </a>
-            <a href="docteams.html" class="nav-bullet">
-                <i class="fa-solid fa-people-group"></i>
-                <span>Team</span>
-            </a>
+
             <a href="doctorseminars.html" class="nav-bullet">
                 <i class='bx bx-slideshow'></i>
                 <span>Seminar</span>
+            </a>
+            <a href="docteams.html" class="nav-bullet">
+                <i class="fa-solid fa-people-group"></i>
+                <span>Team</span>
             </a>
             <a href="editprofile.html" class="nav-bullet">
                 <i class="fa-solid fa-user-pen"></i>
@@ -50,7 +51,10 @@
                             <p class="number">109918820</p>
                         </div>
                     </div>
-                    <button class="Notification-btn" onclick="openModal()"><i class="fa-regular fa-bell"></i></button>
+                    <button class="Notification-btn" onclick="openModal()">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-count" id="notificationCount">0</span>
+                    </button>
                 </div>
                 <div class="bio">
                     senior professor with 10 years of experience supervising graduation projects. He is organized, thorough, and passionate about guiding students to success.
@@ -63,7 +67,7 @@
                             <li><span>Office Number:</span> 211 SS</li>
                         </ul>
                     </div>
-                    <div class="tracks">
+                    <div class="TeamsNum">
                         <h2 style="text-align: center;">Number of Teams</h2>
                         <div class="num"><p>4</p></div>
                     </div>
@@ -76,27 +80,10 @@
                     </div>
                 </div>
             </div>
-            <div class="team">
+            <div class="team" id="registeredTeams">
                 <h2>Registered Teams</h2>
                 <hr>
-                <div class="team-card">
-                    <div class="team-logo">
-                        <img src="pics/logo.png" alt="Team Logo">
-                    </div>
-                    <div class="team-name">
-                        <h3>Auto Grad</h3>
-                        <p> The project aims to simplify and organize the graduation process for university students by providing a centralized platform.</p>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-logo">
-                        <img src="pics/logo.png" alt="Team Logo">
-                    </div>
-                    <div class="team-name">
-                        <h3>Auto Grad</h3>
-                        <p> The project aims to simplify and organize the graduation process for university students by providing a centralized platform.</p>
-                    </div>
-                </div>
+
                 <div class="team-card">
                     <div class="team-logo">
                         <img src="pics/logo.png" alt="Team Logo">
@@ -134,40 +121,52 @@
                                 </div>
                                 <div class="team-name">
                                     <h3>Ibrahem Mohamed Omara</h3>
-                                    <p> 200017723</p>
+                                    <p>200017723</p>
                                 </div>
-                                <button class="remove_btn"> <i class='bx bx-x-circle' ></i></button>
+                                <div class="team-actions">
+                                    <button class="approve_btn"><i class='bx bx-check-circle'></i></button>
+                                    <button class="remove_btn"><i class='bx bx-x-circle'></i></button>
+                                </div>
                             </div>
                             <div class="team-card">
                                 <div class="team-logo">
-                                    <img src="pics/avatar.png" alt="Team Logo">
+                                    <img src="pics/omara.jpeg" alt="Team Logo">
                                 </div>
                                 <div class="team-name">
-                                    <h3>Youssef Mohamed Ramadan</h3>
-                                    <p> 200017720</p>
+                                    <h3>Ibrahem Mohamed Omara</h3>
+                                    <p>200017723</p>
                                 </div>
-                                <button class="remove_btn"> <i class='bx bx-x-circle' ></i></button>
+                                <div class="team-actions">
+                                    <button class="approve_btn"><i class='bx bx-check-circle'></i></button>
+                                    <button class="remove_btn"><i class='bx bx-x-circle'></i></button>
+                                </div>
                             </div>
                             <div class="team-card">
                                 <div class="team-logo">
-                                    <img src="pics/me.png" alt="Team Logo">
+                                    <img src="pics/omara.jpeg" alt="Team Logo">
                                 </div>
                                 <div class="team-name">
-                                    <h3>Ahmed Mahmoud Abouelmawahwb </h3>
-                                    <p> 200018900</p>
+                                    <h3>Ibrahem Mohamed Omara</h3>
+                                    <p>200017723</p>
                                 </div>
-                                <button class="remove_btn"> <i class='bx bx-x-circle' ></i></button>
+                                <div class="team-actions">
+                                    <button class="approve_btn"><i class='bx bx-check-circle'></i></button>
+                                    <button class="remove_btn"><i class='bx bx-x-circle'></i></button>
+                                </div>
                             </div>
                             
                             <div class="team-card">
                                 <div class="team-logo">
-                                    <img src="pics/dhdh.jpeg" alt="Team Logo">
+                                    <img src="pics/omara.jpeg" alt="Team Logo">
                                 </div>
                                 <div class="team-name">
-                                    <h3>Abd-elrahman Shehata </h3>
-                                    <p> 200018900</p>
+                                    <h3>Ibrahem Mohamed Omara</h3>
+                                    <p>200017723</p>
                                 </div>
-                                <button class="remove_btn"> <i class='bx bx-x-circle' ></i></button>
+                                <div class="team-actions">
+                                    <button class="approve_btn"><i class='bx bx-check-circle'></i></button>
+                                    <button class="remove_btn"><i class='bx bx-x-circle'></i></button>
+                                </div>
                             </div>
                             
                         </div>
@@ -192,6 +191,82 @@
         memberRow.remove();
     });
     });
+
+
+
+
+
+//اضافه التيم اللي تم الموافقه عليه في قائمه الفرق
+
+    function openModal() {
+        document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+
+    // حذف العضو
+    document.querySelectorAll('.remove_btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const memberRow = this.closest('.team-card');
+            memberRow.remove();
+            updateNotificationCount();
+        });
+    });
+
+    // الموافقة على العضو
+    document.querySelectorAll('.approve_btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const memberCard = this.closest('.team-card');
+
+            // استخراج الصورة والاسم من كارت العضو
+            const imgSrc = memberCard.querySelector("img").src;
+            const memberName = memberCard.querySelector("h3").innerText;
+
+            // إنشاء كارت فريق جديد
+            const newTeamCard = document.createElement("div");
+            newTeamCard.classList.add("team-card");
+            newTeamCard.innerHTML = `
+                <div class="team-logo">
+                    <img src="${imgSrc}" alt="Team Logo">
+                </div>
+                <div class="team-name">
+                    <h3>${memberName.split(" ")[0]}'s Team</h3>
+                    <p>The project aims to simplify and organize the graduation process for university students by providing a centralized platform.</p>
+                </div>
+            `;
+
+            // إضافة الكارت إلى قسم الفرق
+            const registeredTeamsSection = document.getElementById("registeredTeams");
+            registeredTeamsSection.appendChild(newTeamCard);
+
+            // حذف الكارت من المودال
+            memberCard.remove();
+            updateNotificationCount();
+        });
+    });
+
+
+
+
+    // جرس الاشعارات 
+    function updateNotificationCount() {
+    const count = document.querySelectorAll('#modal .team-card').length;
+    const countSpan = document.getElementById("notificationCount");
+    countSpan.textContent = count;
+
+    // لو صفر، نخفي الرقم
+    if (count === 0) {
+        countSpan.style.display = 'none';
+    } else {
+        countSpan.style.display = 'inline';
+    }
+}
+
+// استدعاء أولي عند تحميل الصفحة
+window.onload = updateNotificationCount;
+
     </script>
 </body>
 </html>
