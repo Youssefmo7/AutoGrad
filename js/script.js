@@ -26,22 +26,3 @@ document.getElementById("studentBtn").classList.add("active");
 document.getElementById("doctorBtn").classList.add("active");
 }
 }
-
-function handleFormSubmit(e) {
-e.preventDefault();
-
-if (!selectedRole) {
-alert("من فضلك اختر طالب أو دكتور");
-return false;
-}
-
-// هنا بقى تقدر تتعامل مع الفورم زي ما تحب
-if (selectedRole === "Student") {
-window.location.href = "/studentprofile.html";
-} else if (selectedRole === "Doctor") {
-window.location.href = "/DoctorProfile.html";
-}
-
-return false;
-}
-

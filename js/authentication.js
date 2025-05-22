@@ -19,6 +19,13 @@
 // });
 
 // console.log('Status:', response.status);
+function registration_successful(selectedRole){
+  if (selectedRole === "Student") {
+    window.location.href = "/studentprofile.html";
+  } else if (selectedRole === "Doctor") {
+    window.location.href = "/DoctorProfile.html";
+  }
+}
 
 const form = document.querySelector('.formReg');
 form.addEventListener("submit", async (e)=>{
@@ -38,7 +45,7 @@ form.addEventListener("submit", async (e)=>{
     });
 
     if(response.ok){
-      registration_successful();
+      registration_successful(userData.role);
     } else {
       registration_failed();
     }
