@@ -18,29 +18,30 @@ function selectRole(role) {
 selectedRole = role;
 document.getElementById("studentBtn").classList.remove("active");
 document.getElementById("doctorBtn").classList.remove("active");
+document.querySelector('#roleInput').value = role;
 
-if (role === "student") {
+if (role === "Student") {
 document.getElementById("studentBtn").classList.add("active");
 } else {
 document.getElementById("doctorBtn").classList.add("active");
 }
 }
 
-function handleFormSubmit(e) {
-e.preventDefault();
+// function handleFormSubmit(e) {
+// e.preventDefault();
 
-if (!selectedRole) {
-alert("من فضلك اختر طالب أو دكتور");
-return false;
-}
+// if (!selectedRole) {
+// alert("من فضلك اختر طالب أو دكتور");
+// return false;
+// }
 
-// هنا بقى تقدر تتعامل مع الفورم زي ما تحب
-if (selectedRole === "student") {
-window.location.href = "/studentprofile.html";
-} else if (selectedRole === "doctor") {
-window.location.href = "/DoctorProfile.html";
-}
+// // هنا بقى تقدر تتعامل مع الفورم زي ما تحب
+// if (selectedRole === "student") {
+// window.location.href = "/studentprofile.html";
+// } else if (selectedRole === "doctor") {
+// window.location.href = "/DoctorProfile.html";
+// }
 
-return false;
-}
+// return false;
+// }
 

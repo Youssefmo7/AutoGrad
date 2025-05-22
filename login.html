@@ -35,43 +35,45 @@
         </div>
         <div class="form-box register">
             <h1>Registration</h1>
-            <form  class="formReg" onsubmit="return handleFormSubmit(event)">
+            <!-- onsubmit="return handleFormSubmit(event)"" -->
+            <form  class="formReg" >
                 <div class="input-box" id="box-1">
-                    <input type="text" placeholder="First name" required>
+                    <input type="text" placeholder="First name" name="firstName" required>
                     <i class="bx bxs-user"></i>
                 </div>
                 <div class="input-box" id="box-2">
-                    <input type="text" placeholder="Midlle name" required>
+                    <input type="text" placeholder="Midlle name" name="middleName" required>
                     <i class="bx bxs-user"></i>
                 </div>
                 <div class="input-box" id="box-3">
-                    <input type="text" placeholder="Last name" required>
+                    <input type="text" placeholder="Last name" name="lastName" required>
                     <i class="bx bxs-user"></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="ID" required>
+                    <input type="text" placeholder="ID" name="academicIDNumber" required>
                     <i class="bx bxs-user"></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Phone" required>
+                    <input type="text" placeholder="Phone" name="phoneNumber" required>
                     <i class='bx bxs-phone'></i>
                 </div>
                 <div class="input-box">
-                    <input type="email" placeholder="Email" required>
+                    <input type="email" placeholder="Email" name="email" required>
                     <i class="bx bxs-envelope"></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Password" name="password" required>
                     <i class="bx bxs-lock-alt"></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Confirm Password" required>
+                    <input type="password" placeholder="Confirm Password" name="confirmPassword" required>
                     <i class="bx bxs-lock-alt"></i>
                 </div>
 
+                <input type="hidden" name="role" id="roleInput" style="display: none;">
                 <div class="role-buttons">
-                    <button type="button" onclick="selectRole('student')" id="studentBtn">Student</button>
-                    <button type="button" onclick="selectRole('doctor')" id="doctorBtn">Supervisor</button>
+                    <button type="button" onclick="selectRole('Student')" id="studentBtn">Student</button>
+                    <button type="button" onclick="selectRole('Doctor')" id="doctorBtn">Supervisor</button>
                 </div>
             
 
@@ -109,5 +111,6 @@
         </div>
     </div>
     <script src="js/script.js"></script>
+    <script src="js/authentication.js"></script>
 </body>
 </html>
