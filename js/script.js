@@ -36,9 +36,9 @@ return false;
 }
 
 // هنا بقى تقدر تتعامل مع الفورم زي ما تحب
-if (selectedRole === "student") {
+if (selectedRole === "Student") {
 window.location.href = "/studentprofile.html";
-} else if (selectedRole === "doctor") {
+} else if (selectedRole === "Doctor") {
 window.location.href = "/DoctorProfile.html";
 }
 
