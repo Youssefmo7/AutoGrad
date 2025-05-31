@@ -31,7 +31,7 @@
                 <i class="fa-solid fa-user-pen"></i>
                 <span>Edit Profile</span>
             </a>
-            <a href="login.html" class="nav-bullet">
+            <a href="index.html" class="nav-bullet">
                 <i class='bx bx-log-out-circle'></i>
                 <span>Log Out</span>
             </a>
@@ -67,7 +67,7 @@
                         <h2>Tracks</h2>
                         <ul>
                             <li>FrontEnd</li>
-                            <li>Ui Ux</li>
+                            <!-- <li>Ui Ux</li> -->
                         </ul>
                     </div>
                     <div class="contact">
@@ -129,6 +129,7 @@
                     <li></li>
                     <li></li>
                 </ol>
+                <button id="studentSeminarGrade">Grade</button>
             </div>
         </div>
 
@@ -201,59 +202,6 @@
         </div>
     </div>
 
-    <script>
-                        function openModal() {
-            document.getElementById("modal").style.display = "flex";
-        }
-        
-        function closeModal() {
-            document.getElementById("modal").style.display = "none";
-        }
-
-                    // لما يضغط على زر الحذف
-    document.querySelectorAll('.remove_btn').forEach(button => {
-    button.addEventListener('click', function () {
-        const memberRow = this.closest('.team-card');
-        memberRow.remove();
-    });
-    });
-
-
-
-                        // لما يضغط على زر الحذف
-                        document.querySelectorAll('.approve_btn').forEach(button => {
-    button.addEventListener('click', function () {
-        const memberRow = this.closest('.team-card');
-        memberRow.remove();
-        updateNotificationCount();
-    });
-    });
-
-            // جرس الاشعارات 
-    function updateNotificationCount() {
-        const count = document.querySelectorAll('#modal .team-card').length;
-        const countSpan = document.getElementById("notificationCount");
-        countSpan.textContent = count;
-
-        // لو صفر، نخفي الرقم
-        if (count === 0) {
-            countSpan.style.display = 'none';
-        } else {
-            countSpan.style.display = 'inline';
-        }
-    }
-
-    // استدعاء أولي عند تحميل الصفحة
-    window.onload = updateNotificationCount;
-
-    // حذف العضو
-    document.querySelectorAll('.remove_btn').forEach(button => {
-        button.addEventListener('click', function () {
-            const memberRow = this.closest('.team-card');
-            memberRow.remove();
-            updateNotificationCount();
-        });
-    });
-    </script>
+    <script type="module" src="/js/StudentProfile.js"></script>
 </body>
 </html>

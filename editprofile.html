@@ -23,15 +23,11 @@
                 <i class="fa-regular fa-user"></i>
                 <span>Profile</span>
             </a>
-
-
-
-
             <a href="editprofile.html" class="nav-bullet">
                 <i class="fa-solid fa-user-pen"></i>
                 <span>Edit Profile</span>
             </a>
-            <a href="login.html" class="nav-bullet">
+            <a href="index.html" class="nav-bullet">
                 <i class='bx bx-log-out-circle'></i>
                 <span>Log Out</span>
             </a>
@@ -42,25 +38,34 @@
                 <button>Change Photo</button>
             </div>
             <div class="form">
-                <input type="text" placeholder="Name">
-                <input type="text" placeholder="ID">
-                <textarea placeholder="BIO"></textarea>
-                <input type="text" placeholder="Major">
-                <input type="text" placeholder="Semester">
-                <input type="text" placeholder="Credit Hours">
-                <input type="text" placeholder="Track 1">
-                <input type="text" placeholder="Track 2">
-                <input type="text" placeholder="Track 3">
-                <input type="email" placeholder="Email">
-                <input type="tel" placeholder="Phone">
-                <input type="text" placeholder="Whatsapp">
-                <input type="text" placeholder="GPA">
+                <!-- <input type="file" id="profilePhotoInput" accept="image/*"> -->
+                <!-- <img id="profilePreview" src="images/profile_avatar.png" alt="Profile Photo" style="width:100px; height:100px; object-fit:cover;"> -->
+                <input type="text" data-name="photoUrl" name="photoUrl" hidden>
+                <input type="text" data-name="firstName" name="firstName" placeholder="First Name">
+                <input type="text" data-name="middleName" name="middleName" placeholder="Middle Name">
+                <input type="text" data-name="lastName" name="lastName" placeholder="Last Name">
+                <input type="text" data-name="academicIDNumber" name="academicIDNumber" placeholder="ID">
+                <textarea placeholder="BIO" data-name="bio" name="bio"></textarea>
+                <input type="text" data-name="department" name="department" placeholder="Major">
+                <input type="text" data-name="creaditHours" name="creaditHours" placeholder="Credit Hours">
+                <input type="text" data-name="track" name="track" placeholder="Track">
+                <input type="email"data-name="email" name="email" placeholder="Email">
+                <input type="tel"  data-name="phoneNumber" name="phoneNumber" placeholder="Phone">
+                <input type="text" data-name="gpa" name="gpa" placeholder="GPA">
                 <div class="buttons">
-                <button class="cancel">Cancel</button>
-                <button class="save">Save</button>
+                    <button class="cancel">Cancel</button>
+                    <button class="save">Save</button>
                 </div>
             </div>
         </div>
+        <div id="profileUpdated" class="popup">
+            <div class="popup-content">
+                <h2>Profile Updated</h2>
+                <p>Your profile has been updated successfully.</p>
+                <button onclick="closeProfileUpdatePopup()">Okay</button>
+            </div>
+        </div>
     </div>
+    <script src="./js/editProfile.js"></script>
 </body>
 </html>

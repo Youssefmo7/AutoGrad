@@ -1,31 +1,40 @@
+// import {initUserProfile} from './StudentProfile.js'
+// import { getUserData } from './StudentProfile.js';
 
+const container = document.querySelector('.container');
+const registerbtn = document.querySelector('.register-btn');
+const loginbtn = document.querySelector('.login-btn');
 
-// const response = await fetch('https://autogradproject.azurewebsites.net/api/Auth/Register', {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json'
-//   },
-//   body: JSON.stringify({
-//     firstName: "John1",
-//     middleName: "M",
-//     lastName: "Doe",
-//     academicIDNumber: "12345",
-//     phoneNumber: "0123456789",
-//     email: "john.doe@exampl.com",
-//     password: "YourSecurePassword123_",
-//     confirmPassword: "YourSecurePassword123_",
-//     role: "Student" // or "Doctor", "Admin", etc. depending on your backend validation
-//   })
-// });
+registerbtn.addEventListener('click', ()=>{
+    container.classList.add('active');
+});
 
-// console.log('Status:', response.status);
-function registration_successful(selectedRole){
-  if (selectedRole === "Student") {
-    window.location.href = "/studentprofile.html";
-  } else if (selectedRole === "Doctor") {
-    window.location.href = "/DoctorProfile.html";
+loginbtn.addEventListener('click', ()=>{
+    container.classList.remove('active');
+  });
+  
+  function closeRegFailedPopup() {
+    document.getElementById("reg-failed-popup").style.display = "none";
   }
-}
+
+  function registration_failed() {
+    document.getElementById("reg-failed-popup").style.display = "flex";
+  }
+  
+  
+  function selectRole(role) {
+    document.getElementById("studentBtn").classList.remove("active");
+    document.getElementById("doctorBtn").classList.remove("active");
+    document.querySelector('#roleInput').value = role;
+    
+    if (role === "Student") {
+      document.getElementById("studentBtn").classList.add("active");
+    } else {
+      document.getElementById("doctorBtn").classList.add("active");
+    }
+  }
+  
+//------------------------------------------------Registration-----------------------------------
 
 const form = document.querySelector('.formReg');
 form.addEventListener("submit", async (e)=>{
@@ -33,19 +42,17 @@ form.addEventListener("submit", async (e)=>{
   const formData = new FormData(form);
   const userData = Object.fromEntries(formData.entries());
   
-  // console.log(userData);
-
   try{
-    const response = await fetch('https://autogradproject.azurewebsites.net/api/Auth/Register', {
+    const response = await fetch('https://autograd3-daayg5argwb5czav.uaenorth-01.azurewebsites.net/api/Auth/Register', {
       method: 'POST',
       headers: {
-        'Content-Type': "application/json"
+        'Content-Type': "application/json",
       },
       body: JSON.stringify(userData)
     });
-
+    
     if(response.ok){
-      registration_successful(userData.role);
+      container.classList.remove('active');
     } else {
       registration_failed();
     }
@@ -60,23 +67,23 @@ form.addEventListener("submit", async (e)=>{
 const loginForm = document.querySelector('.login form');
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const userData = Object.fromEntries(loginForm.entries());
+  const formData = new FormData(loginForm);
+  const queryParams = new URLSearchParams(formData).toString();
+  console.log(queryParams);
+  const apiUrl = `https://autograd3-daayg5argwb5czav.uaenorth-01.azurewebsites.net/api/Auth/Login`;
   
-  try{
-    const response = await fetch('https://autogradproject.azurewebsites.net/api/Auth/Login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': "application/json"
-      },
-      body : JSON.stringify(userData)
-    });
-    
-    if(response.ok){
-      login_successful();
-    } else {
-      login_failed();
-    }
-  } catch(err) {
+  try {
+    const response = await fetch(`${apiUrl}?${queryParams}`, {method: 'POST'});
+    const token = await response.text();
+    const user = jwt_decode(token);
+    if(token != localStorage.getItem('userToken')) localStorage.clear();
+    localStorage.setItem('userId', user.id);
+    localStorage.setItem('userRole', user.role);
+    localStorage.setItem('userToken', token);
+    if(user.role === 'Student') window.location.href = 'studentprofile.html';
+    else window.location.href = 'DoctorProfile.html';
+  } catch (err) {
+    registration_failed();
     console.log('Network error: ', err);
   }
 });

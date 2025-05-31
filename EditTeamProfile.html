@@ -42,7 +42,7 @@
                 <i class="fa-solid fa-user-pen"></i>
                 <span>Edit Profile</span>
             </a>
-            <a href="login.html" class="nav-bullet">
+            <a href="index.html" class="nav-bullet">
                 <i class='bx bx-log-out-circle'></i>
                 <span>Log Out</span>
             </a>
@@ -62,7 +62,7 @@
                             AUTO GRAD
                             <i class="fa-solid fa-pen-to-square edit-icon" onclick="editTeamName()" title="تعديل الاسم"></i>
                         </h3>
-                        <input type="text" id="teamNameInput" style="display: none;" />
+                        <input type="text" id="teamNameInput" name="teamName" style="display: none;" />
                     </div>
 
                     <div class="imgbox">
@@ -189,7 +189,7 @@
                     
                     <div class="team-card">
                         <div class="team-logo">
-                            <img src="pics/avatar.png" alt="Team Logo">
+                            <img src="images/logoW.png" alt="Team Logo">
                         </div>
                         <div class="team-name">
                             <h3>Abd-elrahman Shehata </h3>
@@ -233,17 +233,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
 
     <script>
         const fileInput = document.getElementById('fileInput');
@@ -337,13 +326,18 @@
 
 
         // تعديل الاسم و اللوجو و البايو 
+        const editTeamUrl = 'https://autograd3-daayg5argwb5czav.uaenorth-01.azurewebsites.net/api/Team/EditTeam';
 
+        let api;
+        fetch(`${editTeamUrl}`).then(res=>{console.log(res.status);return res.json()}).then(data=>api=data);
         function changeTeamLogo(event) {
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function (e) {
                     document.getElementById("teamLogo").src = e.target.result;
+                    api.teamLogo = e.target.result;
+                    sendUpdate();
                 };
                 reader.readAsDataURL(file);
             }
@@ -359,6 +353,8 @@
                 nameElement.innerHTML = input.value + `<i class="fa-solid fa-pen-to-square edit-icon" onclick="editTeamName()" title="تعديل الاسم"></i>`;
                 input.style.display = "none";
                 nameElement.style.display = "block";
+                api.teamName = input.value;
+                sendUpdate();
             };
         }
 
@@ -380,6 +376,8 @@
             bio.style.display = "block";
             input.style.display = "none";
             saveBtn.style.display = "none";
+            api.teamBio = input.value;
+            sendUpdate();
         }
 
 
@@ -406,6 +404,14 @@ function renderFeedback() {
         `;
         feedbackContainer.appendChild(card);
     });
+}
+function sendUpdate(){
+    const response = fetch(`${editTeamUrl}`, {
+        method: "POST",
+        headers: "application/json",
+        body: JSON.stringify(api)
+    })
+    console.log(response.status);
 }
 
 // تشغيله مباشرة

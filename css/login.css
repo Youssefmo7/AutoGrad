@@ -348,3 +348,74 @@ border-color: #007bff;
         font-size: 30px;
     }
 }
+/*------------------------------------Registration Failed popup-------------------------------*/
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+  animation: slideUp 0.4s ease;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+  font-size: 22px;
+  color: #e74c3c;
+}
+
+.popup-content p {
+  font-size: 16px;
+  margin: 15px 0 25px;
+  color: #555;
+}
+
+.popup-content button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 25px;
+  font-size: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #c0392b;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(0, 0, 0, 0.6);
+  }
+}

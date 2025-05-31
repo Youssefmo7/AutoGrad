@@ -13,11 +13,11 @@
             <form action="">
                 <h1>Login</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" placeholder="Username" name="email" required>
                     <i class="bx bxs-user"></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Password" name="password" required>
                     <i class="bx bxs-lock-alt"></i>
                 </div>
                 <div class="forgot-link">
@@ -69,14 +69,11 @@
                     <input type="password" placeholder="Confirm Password" name="confirmPassword" required>
                     <i class="bx bxs-lock-alt"></i>
                 </div>
-
-                <input type="hidden" name="role" id="roleInput" style="display: none;">
+                <input type="hidden" name="role" id="roleInput" hidden>
                 <div class="role-buttons">
                     <button type="button" onclick="selectRole('Student')" id="studentBtn">Student</button>
                     <button type="button" onclick="selectRole('Doctor')" id="doctorBtn">Supervisor</button>
                 </div>
-            
-
                 <button type="submit" class="btn">Register</button>
             </form>
             <p>or Register with Social Platforms</p>
@@ -109,8 +106,15 @@
                 <button class="btn login-btn">Login</button>
             </div>
         </div>
+        <div id="reg-failed-popup" class="popup">
+            <div class="popup-content">
+                <h2>Registration Failed</h2>
+                <p>Something went wrong. Please check your inputs or try again later.</p>
+                <button onclick="closeRegFailedPopup()">Okay</button>
+            </div>
+        </div>
     </div>
-    <script src="js/script.js"></script>
-    <script src="js/authentication.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+    <script src="./js/authentication.js"></script>
 </body>
 </html>
