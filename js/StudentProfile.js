@@ -8,7 +8,7 @@ function openModal() {
 }
 
 function closeModal() {
-  document.getElementById("modal").style.display = "none";
+    document.getElementById("modal").style.display = "none";
 }
 window.closeModal = closeModal;
 window.openModal = openModal;
@@ -32,13 +32,13 @@ document.querySelectorAll(".approve_btn").forEach((button) => {
 
 // جرس الاشعارات
 function updateNotificationCount() {
-  const count = document.querySelectorAll("#modal .team-card").length;
-  const countSpan = document.getElementById("notificationCount");
-  countSpan.textContent = count;
+    const count = document.querySelectorAll("#modal .team-card").length;
+    const countSpan = document.getElementById("notificationCount");
+    countSpan.textContent = count;
 
   // لو صفر، نخفي الرقم
-  if (count === 0) {
-      countSpan.style.display = "none";
+    if (count === 0) {
+        countSpan.style.display = "none";
     } else {
         countSpan.style.display = "inline";
     }
@@ -97,3 +97,38 @@ async function getUserData() {
 // track: null
 // email: 
 // grades: 
+
+
+
+
+  // نوع المستخدم: غيره إلى "student" لو اليوزر طالب
+  const userRole = "doctor"; // أو "student"
+  const studentGrade = 88; // ممكن تجيبها من قاعدة بيانات
+
+document.getElementById("studentSeminarGrade").addEventListener("click", function () {
+const gradeBox = document.getElementById("gradeBox");
+const gradeContent = document.getElementById("gradeContent");
+
+// عرض الصندوق
+gradeBox.style.display = "block";
+
+// لو دكتور → input و زر حفظ
+if (userRole === "doctor") {
+    gradeContent.innerHTML = `
+    <input type="number" id="gradeInput" value="${studentGrade}" min="0" max="100" />
+    <button onclick="saveGrade()">Save</button>
+    `;
+} else {
+    // لو طالب → عرض الدرجة فقط
+    gradeContent.innerHTML = `
+    <p>${studentGrade}</p>
+    `;
+}
+});
+
+function saveGrade() {
+const input = document.getElementById("gradeInput");
+const newGrade = input.value;
+alert("تم حفظ الدرجة: " + newGrade);
+// هنا تقدر تبعت الدرجة للسيرفر مثلاً باستخدام fetch أو Ajax
+}
