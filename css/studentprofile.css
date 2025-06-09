@@ -341,12 +341,11 @@ hr.vertical{
 
 
 .grade-box {
-            margin: 15px 0% 0 15%;
+    margin: 15px 0% 0 18%;
     background-color: #f0f4f8;
     border: 2px solid #cbd5e0;
     border-radius: 10px;
     padding: 20px;
-    margin-top: 15px;
     width: fit-content;
     animation: fadeIn 0.3s ease-in-out;
 }

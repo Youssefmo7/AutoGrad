@@ -42,56 +42,9 @@
             </a>
         </div>
         <h4 id="offseminarsH">Official seminars</h4>
-        <div class="officialseminars">
-            <div class="seminar">
-                <h5>Seminar</h5>
-                <div class="date">
-                    <div class="hour"><i class="fa-regular fa-clock"></i> <span>10:00 AM</span></div>
-                    <div class="day">
-                        <i class="fa-regular fa-calendar-check"></i>
-                        <span>August</span>
-                        <span>5</span>
-                    </div>
-                </div>
-                
-                <div class="progress">
-                    <div class="requirments">
-                        <h5>requirments</h5>
-                        <ol>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="officialseminars"></div>
         <h4 id="offseminarsH">Weekly seminars</h4>
-        <div class="officialseminars">
-            <div class="weeklyseminar">
-                <h5>Weekly Seminar</h5>
-                <div class="date">
-                    <div class="hour"><i class="fa-regular fa-clock"></i> <span>10:00 AM</span></div>
-                    <div class="day">
-                        <i class="fa-regular fa-calendar-check"></i>
-                        <span>August</span>
-                        <span>5</span>
-                    </div>
-                </div>
-                <div class="progress">
-                    <div class="requirments">
-                        <h5>requirments</h5>
-                        <ol>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="weeklyseminars"></div>
         <!-- FAB trigger -->
         <button class="open-modal-btn" id="openModal">+</button>
         <!-- Modal Popup -->
@@ -118,25 +71,7 @@
             </div>
         </div>
     </div>
-    <script>
-        const openModal = document.getElementById('openModal');
-        const seminarModal = document.getElementById('seminarModal');
-        const closeModal = document.getElementById('closeModal');
-        const cancelBtn = document.getElementById('cancelBtn');
-        openModal.onclick = () => seminarModal.style.display = 'flex';
-        closeModal.onclick = () => seminarModal.style.display = 'none';
-        cancelBtn.onclick = () => seminarModal.style.display = 'none';
-        // Toggle logic
-        const seminarBtn = document.getElementById('seminarBtn');
-        const weeklyBtn = document.getElementById('weeklyBtn');
-        seminarBtn.onclick = () => {
-            seminarBtn.classList.add('active');
-            weeklyBtn.classList.remove('active');
-        }
-        weeklyBtn.onclick = () => {
-            weeklyBtn.classList.add('active');
-            seminarBtn.classList.remove('active');
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+    <script src="/js/doctorSeminars.js"></script>
 </body>
 </html>

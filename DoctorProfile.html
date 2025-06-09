@@ -51,7 +51,7 @@
                             <p class="number">109918820</p>
                         </div>
                     </div>
-                    <button class="Notification-btn" onclick="openModal()">
+                    <button class="Notification-btn" onclick="">
                         <i class="fa-regular fa-bell"></i>
                         <span class="notification-count" id="notificationCount">0</span>
                     </button>
@@ -62,7 +62,6 @@
                 <div class="academicInfo">
                     <div class="major">
                         <ul>
-                            <li><span>Academic Degree:</span> Professor</li>
                             <li><span>Department:</span> Computer Science</li>
                             <li><span>Office Number:</span> 211 SS</li>
                         </ul>
@@ -109,7 +108,7 @@
         <!-- 🔲 Modal -->
         <div class="modal-overlay" id="modal">
             <div class="modal-content">
-                <span class="close-btn" onclick="closeModal()">✖</span>
+                <span class="close-btn" onclick="">✖</span>
                 <h3>Your team members</h3>
                 <div class="team">
                     <hr>
@@ -174,99 +173,7 @@
             </div>
         </div>
     </div>
-
-    <script>
-                function openModal() {
-            document.getElementById("modal").style.display = "flex";
-        }
-        
-        function closeModal() {
-            document.getElementById("modal").style.display = "none";
-        }
-
-                    // لما يضغط على زر الحذف
-    document.querySelectorAll('.remove_btn').forEach(button => {
-    button.addEventListener('click', function () {
-        const memberRow = this.closest('.team-card');
-        memberRow.remove();
-    });
-    });
-
-
-
-
-
-//اضافه التيم اللي تم الموافقه عليه في قائمه الفرق
-
-    function openModal() {
-        document.getElementById("modal").style.display = "flex";
-    }
-
-    function closeModal() {
-        document.getElementById("modal").style.display = "none";
-    }
-
-    // حذف العضو
-    document.querySelectorAll('.remove_btn').forEach(button => {
-        button.addEventListener('click', function () {
-            const memberRow = this.closest('.team-card');
-            memberRow.remove();
-            updateNotificationCount();
-        });
-    });
-
-    // الموافقة على العضو
-    document.querySelectorAll('.approve_btn').forEach(button => {
-        button.addEventListener('click', function () {
-            const memberCard = this.closest('.team-card');
-
-            // استخراج الصورة والاسم من كارت العضو
-            const imgSrc = memberCard.querySelector("img").src;
-            const memberName = memberCard.querySelector("h3").innerText;
-
-            // إنشاء كارت فريق جديد
-            const newTeamCard = document.createElement("div");
-            newTeamCard.classList.add("team-card");
-            newTeamCard.innerHTML = `
-                <div class="team-logo">
-                    <img src="${imgSrc}" alt="Team Logo">
-                </div>
-                <div class="team-name">
-                    <h3>${memberName.split(" ")[0]}'s Team</h3>
-                    <p>The project aims to simplify and organize the graduation process for university students by providing a centralized platform.</p>
-                </div>
-            `;
-
-            // إضافة الكارت إلى قسم الفرق
-            const registeredTeamsSection = document.getElementById("registeredTeams");
-            registeredTeamsSection.appendChild(newTeamCard);
-
-            // حذف الكارت من المودال
-            memberCard.remove();
-            updateNotificationCount();
-        });
-    });
-
-
-
-
-    // جرس الاشعارات 
-    function updateNotificationCount() {
-    const count = document.querySelectorAll('#modal .team-card').length;
-    const countSpan = document.getElementById("notificationCount");
-    countSpan.textContent = count;
-
-    // لو صفر، نخفي الرقم
-    if (count === 0) {
-        countSpan.style.display = 'none';
-    } else {
-        countSpan.style.display = 'inline';
-    }
-}
-
-// استدعاء أولي عند تحميل الصفحة
-window.onload = updateNotificationCount;
-
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+    <script type="module" src="js/doctorProfile.js"></script>
 </body>
 </html>

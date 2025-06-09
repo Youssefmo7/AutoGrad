@@ -27,12 +27,11 @@ header{
         }
     }
 }
-.officialseminars{
+.officialseminars, .weeklyseminars{
     margin: 5px 100px;
     padding: 20px;
     display: flex;
     gap: 20px;
-    /* flex-wrap: wrap; */
     overflow-x: auto;
     .tmp{gap:2;}
     .seminar, .weeklyseminar{
@@ -40,52 +39,80 @@ header{
         padding: 10px;
         border-radius: 10px;
         margin-left: 20px;
+        width: 325px;
+        height: 220px;
         .gmp{gap:1;}
         h5{
             text-align: center;
             margin-bottom: 10px;
         }
-        ol{
-            padding-left: 25px;
+        p{
+            max-height: 100px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            white-space: normal;
+            overflow-wrap: break-word;
         }
     }
-    .weeklyseminar{
-        min-width: 225px;
-    }
-    .seminar{
-        min-width: 325px;
-    }
 }
-.officialseminars .date{
-    display: flex;
-    justify-content: space-evenly;
-    gap: 20px;
-    background-color: white;
-    padding: 10px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    .gmp{gap:1;}
-    span{
-        color: #133E87;
-        font-weight: bold;
-    }
+.seminar p::-webkit-scrollbar,
+.weeklyseminar p::-webkit-scrollbar {
+    width: 8px;
 }
-.officialseminars .progress{
-    height: fit-content;
-    display: flex;
-    gap: 30px;
-    background-color: transparent;
-    .gmp{gap:1;}
-    .requirments{
-        height: fit-content;
-        h5{
-            margin-left: 20px;
-        }
-    }
-    .prog{
+
+.seminar p::-webkit-scrollbar-track,
+.weeklyseminar p::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.seminar p::-webkit-scrollbar-thumb,
+.weeklyseminar p::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.seminar p::-webkit-scrollbar-thumb:hover,
+.weeklyseminar p::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.officialseminars, .weeklyseminars{
+    .date{
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: space-evenly;
+        gap: 20px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        .gmp{gap:1;}
+        span{
+            color: #133E87;
+            font-weight: bold;
+        }
+    }
+}
+
+.officialseminars, .weeklyseminars{
+    .progress{
+        height: fit-content;
+        display: flex;
+        gap: 30px;
+        background-color: transparent;
+        .gmp{gap:1;}
+        .requirments{
+            height: fit-content;
+            max-width: 100%;
+            h5{
+                margin-left: 20px;
+            }   
+        }
+        .prog{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
 

@@ -1,22 +1,37 @@
 // js/forget.js
 let sentCode = "";
 
-function sendCode() {
+function sendNewPassword(){
+    document.getElementById('newPasswordSent').style.display = 'flex';
+}
+
+function closeNewPasswordSent(){
+    document.getElementById('newPasswordSent').style.display = 'none';
+    window.location.href = 'index.html';
+}
+
+async function sendCode() {
     const email = document.getElementById("email").value;
     if (!email) {
         alert("Please enter your email");
         return;
     }
-
+    // const endcodedEmail = encodeURIComponent(email);
+    const api = 'https://autogradkareem-efdhcqesekaab8fm.polandcentral-01.azurewebsites.net/api/Auth/forgot-password';
+    try{
+        const response = await fetch(`${api}?email=${email}`, {method: "POST"});
+        sendNewPassword();
+    } catch(err){console.log(err);}
     // محاكاة إرسال كود (في الحقيقي لازم تبعته من السيرفر)
     sentCode = Math.floor(100000 + Math.random() * 900000).toString();
     console.log("Code sent to email:", sentCode); // في الواقع، السيرفر هيرسل الإيميل
 
-    alert("Verification code sent to your email!");
+
+    // alert("Verification code sent to your email!");
 
     // الانتقال للخطوة 2
-    document.getElementById("step1").style.display = "none";
-    document.getElementById("step2").style.display = "block";
+    // document.getElementById("step1").style.display = "none";
+    // document.getElementById("step2").style.display = "block";
 }
 
 function verifyCode() {

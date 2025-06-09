@@ -43,7 +43,8 @@ form.addEventListener("submit", async (e)=>{
   const userData = Object.fromEntries(formData.entries());
   
   try{
-    const response = await fetch('https://autograd3-daayg5argwb5czav.uaenorth-01.azurewebsites.net/api/Auth/Register', {
+    
+    const response = await fetch('https://autogradkareem-efdhcqesekaab8fm.polandcentral-01.azurewebsites.net/api/Auth/Register', {
       method: 'POST',
       headers: {
         'Content-Type': "application/json",
@@ -70,7 +71,7 @@ loginForm.addEventListener("submit", async (e) => {
   const formData = new FormData(loginForm);
   const queryParams = new URLSearchParams(formData).toString();
   console.log(queryParams);
-  const apiUrl = `https://autograd3-daayg5argwb5czav.uaenorth-01.azurewebsites.net/api/Auth/Login`;
+  const apiUrl = `https://autogradkareem-efdhcqesekaab8fm.polandcentral-01.azurewebsites.net/api/Auth/Login`;
   
   try {
     const response = await fetch(`${apiUrl}?${queryParams}`, {method: 'POST'});
