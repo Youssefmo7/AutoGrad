@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/commons.css">
+    <link rel="stylesheet" href="css/createTeam.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Team Profile</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Header bar -->
+        <header>
+            <div class="logo">
+                <img src="pics/logoW.png" alt="Auto Grad">
+            </div>
+            <p>"Automating Your Graduation Success"</p>
+        </header>
+        <!------------------------------------------------------------->
+        <!-- nav left bar -->
+        <div class="nav-container">
+            <a href="studentprofile.html" class="nav-bullet">
+                <i class="fa-regular fa-user"></i>
+                <span>Profile</span>
+            </a>
+           <a href="EditTeamProfile.html" class="nav-bullet">
+                <i class="fa-solid fa-people-group"></i>
+                <span>Team</span>
+            </a> 
+            <a href="editprofile.html" class="nav-bullet">
+                <i class="fa-solid fa-user-pen"></i>
+                <span>Edit Profile</span>
+            </a>
+            <a href="index.html" class="nav-bullet">
+                <i class='bx bx-log-out-circle'></i>
+                <span>Log Out</span>
+            </a>
+        </div>
+        <!------------------------------------------------------------->
+        <div class="noTeam">
+            <p>You Don't have team yet!</p>
+            <button>Create Team</button>
+        </div>
+        <div class="popUp">
+            <h3>Create Team</h3>
+            <input id="name" type="text" placeholder="Team Name">
+            <input id="logo" type="text" placeholder="Logo URL">
+            <button>Create</button>
+        </div>
+    </div>
+    <script src="js/createTeam.js"></script>
+</body>
+</html>

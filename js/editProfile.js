@@ -31,7 +31,7 @@ document.querySelector('.form .buttons .save').addEventListener('click', async (
     });
     userData["bio"] = bio.value;
     localStorage.setItem('userData', JSON.stringify(userData));
-    const api = 'https://autogradkareem-efdhcqesekaab8fm.polandcentral-01.azurewebsites.net/api/Student';
+    const api = 'https://autogradkareem-efdhcqesekaab8fm.polandcentral-01.azurewebsites.net/api/Student/StudentEditProfile';
     const resopnse = await fetch(`${api}`, {
         method: "PUT",
         headers: {

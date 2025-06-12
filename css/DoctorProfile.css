@@ -55,7 +55,7 @@
     }
 }
 .profile .team{
-    min-width: 200px;
+    min-width: 40%;
     padding: 20px;
     background-color: white;
     color: #133E87;
@@ -138,14 +138,16 @@
 
 
 .num{
+    text-align: center;
     display: inline-block;
     padding: 20px;
-    background-color: #9CD49F;border-radius: 100px;
+    background-color: #9CD49F;
+    border-radius: 100px;
     width: 80px;
     height: 80px;
+    font-size: 36px;
     justify-content: center;
     align-items: center;
-
     .tmp{gap: 1;}
     p{
         font-weight: 500;
@@ -228,6 +230,7 @@
     text-align: center;
     margin-left: 10px;
     font-weight: 100;
+    width: 90%;
 }
 .team-card{
 

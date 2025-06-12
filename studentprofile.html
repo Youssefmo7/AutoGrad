@@ -23,7 +23,7 @@
                 <i class="fa-regular fa-user"></i>
                 <span>Profile</span>
             </a>
-            <a href="TeamProfile.html" class="nav-bullet">
+            <a data-team="team" class="nav-bullet">
                 <i class="fa-solid fa-people-group"></i>
                 <span>Team</span>
             </a>
@@ -90,7 +90,7 @@
             <div class="team">
                 <h2>Team</h2>
                 <h3>Auto Grad</h3>
-                <p>The project aims to simplify and organize the graduation process for university students by providing a centralized platform.</p>
+                <p id="bio">The project aims to simplify and organize the graduation process for university students by providing a centralized platform.</p>
                 <ol>
                     <h4>Members:</h4>
                     <li>Ahmed Ali Ramdan</li>
@@ -103,9 +103,9 @@
                         <img src="images/Generic avatar.png" alt="">
                         <p>Doctor<br>Mohamed Ibrahim</p>
                     </div>
-                    <div class="doctor">
+                    <div class="doctor ta">
                         <img src="images/Generic avatar.png" alt="">
-                        <p>Doctor<br>Mohamed Ibrahim</p>
+                        <p>ENG<br>Aya Taha</p>
                     </div>
                 </div>
             </div>
@@ -137,76 +137,18 @@
                 </div>
             </div>
         </div>
-
         <!-- 🔲 Modal -->
         <div class="modal-overlay" id="modal">
             <div class="modal-content">
-                <span class="close-btn" onclick="">✖</span>
-                <h3>Your team members</h3>
+                <span class="close-btn">✖</span>
+                <h3>Your Requests</h3>
                 <div class="team">
                     <hr>
-                        <div class="Members_stack">
-                        
-                            <div class="team-card">
-                                <div class="team-logo">
-                                    <img src="pics/omara.jpeg" alt="Team Logo">
-                                </div>
-                                <div class="team-name">
-                                    <h3>Ibrahem Mohamed Omara</h3>
-                                    <p>200017723</p>
-                                </div>
-                                <div class="team-actions">
-                                    <button class="approve_btn"><i class='bx bx-check-circle'></i></button>
-                                    <button class="remove_btn"><i class='bx bx-x-circle'></i></button>
-                                </div>
-                            </div>
-                            <div class="team-card">
-                                <div class="team-logo">
-                                    <img src="pics/omara.jpeg" alt="Team Logo">
-                                </div>
-                                <div class="team-name">
-                                    <h3>Ibrahem Mohamed Omara</h3>
-                                    <p>200017723</p>
-                                </div>
-                                <div class="team-actions">
-                                    <button class="approve_btn"><i class='bx bx-check-circle'></i></button>
-                                    <button class="remove_btn"><i class='bx bx-x-circle'></i></button>
-                                </div>
-                            </div>
-                            <div class="team-card">
-                                <div class="team-logo">
-                                    <img src="pics/omara.jpeg" alt="Team Logo">
-                                </div>
-                                <div class="team-name">
-                                    <h3>Ibrahem Mohamed Omara</h3>
-                                    <p>200017723</p>
-                                </div>
-                                <div class="team-actions">
-                                    <button class="approve_btn"><i class='bx bx-check-circle'></i></button>
-                                    <button class="remove_btn"><i class='bx bx-x-circle'></i></button>
-                                </div>
-                            </div>
-                            
-                            <div class="team-card">
-                                <div class="team-logo">
-                                    <img src="pics/omara.jpeg" alt="Team Logo">
-                                </div>
-                                <div class="team-name">
-                                    <h3>Ibrahem Mohamed Omara</h3>
-                                    <p>200017723</p>
-                                </div>
-                                <div class="team-actions">
-                                    <button class="approve_btn"><i class='bx bx-check-circle'></i></button>
-                                    <button class="remove_btn"><i class='bx bx-x-circle'></i></button>
-                                </div>
-                            </div>
-                            
-                        </div>
+                    <div class="Members_stack"></div>
                 </div>
             </div>
         </div>
     </div>
-
     <script type="module" src="/js/StudentProfile.js"></script>
 </body>
 </html>

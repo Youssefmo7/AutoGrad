@@ -137,8 +137,17 @@
     font-weight: 100;
     border-bottom: solid;
     padding-bottom: 10px;
+    p{
+        overflow: hidden;
+    }
 }
-
+#saveBioBtn{
+    padding: 5px;
+    background-color: #133E87;
+    color: white;
+    cursor: pointer;
+    margin: 5px 20px;
+}
 .imgbox{
     width: 145px;
     height: 145px;
@@ -557,6 +566,9 @@ color: #888;
 
 
 /*تعديل الاسم و اللوجو و البايو */
+.identity{
+    display: flex;
+}
 .edit-icon {
     margin-left: 10px;
     cursor: pointer;

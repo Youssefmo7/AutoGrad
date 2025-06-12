@@ -75,7 +75,7 @@
 }
 .student{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
     border-radius: 10px;
     border-bottom: solid 1px #2DCC9F;
@@ -101,6 +101,11 @@
     gap: 25%;
     margin-top: 30px;
     justify-content: unset;
+}
+.student .nameId{
+    width: 90%;
+    text-align: center;
+    margin-top: 25px;
 }
 
 

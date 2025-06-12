@@ -31,13 +31,10 @@
                 <i class="fa-regular fa-user"></i>
                 <span>Profile</span>
             </a>
-            <a href="#" class="nav-bullet">
+            <a href="EditTeamProfile.html" class="nav-bullet">
                 <i class="fa-solid fa-people-group"></i>
                 <span>Team</span>
             </a>
-
-
-
             <a href="editprofile.html" class="nav-bullet">
                 <i class="fa-solid fa-user-pen"></i>
                 <span>Edit Profile</span>
@@ -47,21 +44,15 @@
                 <span>Log Out</span>
             </a>
         </div>
-
         <!------------------------------------------------------------->
-        
-
         <div class="profile">
-
 <!-- left card ---------------------------------->
             <div class="ProjectProfile">
 
                 <div class="ProjectTitle">
                     <div class="identity">
-                        <h3 class="Project_name" id="teamName">
-                            AUTO GRAD
-                            <i class="fa-solid fa-pen-to-square edit-icon" onclick="editTeamName()" title="تعديل الاسم"></i>
-                        </h3>
+                        <h3 class="Project_name" id="teamName">AUTO GRAD</h3>
+                        <i class="fa-solid fa-pen-to-square edit-icon" title="تعديل الاسم"></i>
                         <input type="text" id="teamNameInput" name="teamName" style="display: none;" />
                     </div>
 
@@ -77,11 +68,11 @@
                 </div>
 
                 <div class="bio" id="teamBio">
-                    senior professor with 10 years of experience supervising graduation projects...
-                    <i class="fa-solid fa-pen-to-square edit-icon" onclick="editBio()" title="تعديل النبذة"></i>
+                    <p>senior professor with 10 years of experience supervising graduation projects...</p>
+                    <i class="fa-solid fa-pen-to-square edit-icon"  title="تعديل النبذة"></i>
                 </div>
-                <textarea id="teamBioInput" style="display: none; width: 100%; margin-top: 10px;" rows="4"></textarea>
-                <button id="saveBioBtn" style="display: none;" onclick="saveBio()">حفظ</button>
+                <textarea id="teamBioInput" style="padding:10px;display: none; width: 100%; margin-top: 10px;" rows="4"></textarea>
+                <button id="saveBioBtn">Save</button>
 
                 
                 <div class="academicInfo">
@@ -142,62 +133,11 @@
 <!---------------------------------------------------------------------------->
 
 
-<!-- right card ----------------------------------->
+<!------------------------------------------- right card ----------------------------------->
             <div class="team">
                 <h3>Registered Teams</h3>
                 <hr>
-                <div class="Members_stack">
-                    <div class="team-card" id="leader">
-                        <div class="team-logo">
-                            <img src="pics/avatar.png" alt="Team Logo">
-                        </div>
-                        <div class="team-name">
-                            <h3>Kareem Ashraaf</h3>
-                            <p> 200017722</p>
-                        </div>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-logo">
-                            <img src="pics/avatar.png" alt="Team Logo">
-                        </div>
-                        <div class="team-name">
-                            <h3>Ibrahem Mohamed Omara</h3>
-                            <p> 20017723</p>
-                        </div>
-                        <button class="remove_btn"> <i class='bx bx-x-circle' ></i></button>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-logo">
-                            <img src="pics/avatar.png" alt="Team Logo">
-                        </div>
-                        <div class="team-name">
-                            <h3>Youssef Mohamed Ramadan</h3>
-                            <p> 200017720</p>
-                        </div>
-                        <button class="remove_btn"> <i class='bx bx-x-circle' ></i></button>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-logo">
-                            <img src="pics/avatar.png" alt="Team Logo">
-                        </div>
-                        <div class="team-name">
-                            <h3>Ahmed Mahmoud Abouelmawahwb </h3>
-                            <p> 200018900</p>
-                        </div>
-                        <button class="remove_btn"> <i class='bx bx-x-circle' ></i></button>
-                    </div>
-                    
-                    <div class="team-card">
-                        <div class="team-logo">
-                            <img src="images/logoW.png" alt="Team Logo">
-                        </div>
-                        <div class="team-name">
-                            <h3>Abd-elrahman Shehata </h3>
-                            <p> 200018900</p>
-                        </div>
-                        <button class="remove_btn"> <i class='bx bx-x-circle' ></i></button>
-                    </div>
-                </div>
+                <div class="Members_stack"></div>
 
                 <!-- زر إضافة عضو جديد -->
                 <div class="add-member-btn">
@@ -208,15 +148,15 @@
                 <div class="supervisors-block">
                 <div class="supervisors">
                     <div class="supervisor">
-                    <img src="https://i.pravatar.cc/80?u=super1" alt="مشرف" />
+                    <img src="https://i.pravatar.cc/80?u=super2" alt="مشرف" />
                     <div>
                         <p><strong>DR/ Alaa Eldeen</strong></p>
                         <span>DOC</span>
                     </div>
                     </div>
 
-                    <div class="supervisor">
-                    <img src="https://i.pravatar.cc/80?u=super2" alt="مساعد مشرف" />
+                    <div class="supervisor ta">
+                    <img src="https://i.pravatar.cc/80?u=super1" alt="مساعد مشرف" />
                     <div>
                         <p><strong>Eng/ Aya Taha</strong></p>
                         <span> T.A</span>
@@ -226,199 +166,13 @@
 
                 </div>
                 <div class="add-member-btn">
-                    <button><a href="PickTeam.html"><i class='bx bx-plus'></i></a></button>
+                    <button><a href="pickSupervisor.html"><i class='bx bx-plus'></i></a></button>
                 </div> 
                 </div>
 
             </div>
         </div>
     </div>
-
-    <script>
-        const fileInput = document.getElementById('fileInput');
-        const previewContainer = document.getElementById('previewContainer');
-        const sendBtn = document.getElementById('sendBtn');
-        const successMessage = document.getElementById('successMessage');
-
-        let selectedFiles = [];
-
-        fileInput.addEventListener('change', () => {
-            successMessage.style.display = 'none';
-
-            selectedFiles = [...selectedFiles, ...Array.from(fileInput.files)];
-            renderPreviews();
-
-            fileInput.value = ''; // clear input to allow re-adding same file again if needed
-        });
-
-        function renderPreviews() {
-            previewContainer.innerHTML = '';
-
-            selectedFiles.forEach((file, index) => {
-            const previewItem = document.createElement('div');
-            previewItem.classList.add('preview-item');
-
-            // remove button
-            const removeBtn = document.createElement('button');
-            removeBtn.classList.add('remove-btn');
-            removeBtn.innerHTML = '×';
-            removeBtn.addEventListener('click', () => {
-                selectedFiles.splice(index, 1);
-                renderPreviews();
-            });
-
-            previewItem.appendChild(removeBtn);
-
-            // image or icon
-            if (file.type.startsWith('image/')) {
-                const img = document.createElement('img');
-                img.src = URL.createObjectURL(file);
-                previewItem.appendChild(img);
-            } else {
-                const icon = document.createElement('i');
-                icon.className = "fas fa-file-alt fa-3x";
-                icon.style.color = "#007bff";
-                previewItem.appendChild(icon);
-            }
-
-            // progress bar container
-            const progressContainer = document.createElement('div');
-            progressContainer.classList.add('progress-bar-container');
-            const progressBar = document.createElement('div');
-            progressBar.classList.add('progress-bar');
-            progressContainer.appendChild(progressBar);
-            previewItem.appendChild(progressContainer);
-
-            // simulate upload
-            setTimeout(() => {
-                progressBar.style.width = '100%'; // simulate full progress
-            }, 500);
-
-            // filename
-            const name = document.createElement('div');
-            name.classList.add('file-name');
-            name.textContent = file.name;
-            previewItem.appendChild(name);
-
-            previewContainer.appendChild(previewItem);
-            });
-        }
-
-        sendBtn.addEventListener('click', () => {
-            if (selectedFiles.length === 0) {
-            alert("من فضلك اختر ملفات أولاً");
-            } else {
-            successMessage.style.display = 'block';
-            }
-        });
-
-
-
-
-
-            // لما يضغط على زر الحذف
-        document.querySelectorAll('.remove_btn').forEach(button => {
-        button.addEventListener('click', function () {
-            const memberRow = this.closest('.team-card');
-            memberRow.remove();
-        });
-        });
-
-
-        // تعديل الاسم و اللوجو و البايو 
-        const editTeamUrl = 'https://autograd3-daayg5argwb5czav.uaenorth-01.azurewebsites.net/api/Team/EditTeam';
-
-        let api;
-        fetch(`${editTeamUrl}`).then(res=>{console.log(res.status);return res.json()}).then(data=>api=data);
-        function changeTeamLogo(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    document.getElementById("teamLogo").src = e.target.result;
-                    api.teamLogo = e.target.result;
-                    sendUpdate();
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function editTeamName() {
-            const nameElement = document.getElementById("teamName");
-            const input = document.getElementById("teamNameInput");
-            input.value = nameElement.innerText.trim();
-            nameElement.style.display = "none";
-            input.style.display = "inline";
-            input.onblur = function () {
-                nameElement.innerHTML = input.value + `<i class="fa-solid fa-pen-to-square edit-icon" onclick="editTeamName()" title="تعديل الاسم"></i>`;
-                input.style.display = "none";
-                nameElement.style.display = "block";
-                api.teamName = input.value;
-                sendUpdate();
-            };
-        }
-
-        function editBio() {
-            const bio = document.getElementById("teamBio");
-            const input = document.getElementById("teamBioInput");
-            const saveBtn = document.getElementById("saveBioBtn");
-            input.value = bio.innerText.trim();
-            bio.style.display = "none";
-            input.style.display = "block";
-            saveBtn.style.display = "inline-block";
-        }
-
-        function saveBio() {
-            const input = document.getElementById("teamBioInput");
-            const bio = document.getElementById("teamBio");
-            const saveBtn = document.getElementById("saveBioBtn");
-            bio.innerHTML = input.value + `<i class="fa-solid fa-pen-to-square edit-icon" onclick="editBio()" title="تعديل النبذة"></i>`;
-            bio.style.display = "block";
-            input.style.display = "none";
-            saveBtn.style.display = "none";
-            api.teamBio = input.value;
-            sendUpdate();
-        }
-
-
-            // عرض الفيدباك من localStorage
-    const feedbackContainer = document.querySelector(".DoctorFeedback .feedback-section");
-
-function renderFeedback() {
-    const feedbacks = JSON.parse(localStorage.getItem("teamFeedbacks") || "[]");
-
-    feedbacks.forEach(fb => {
-        const card = document.createElement("div");
-        card.className = "feedback-card success";
-        card.innerHTML = `
-            <div class="feedback-header">
-                <div class="doctor-info">
-                    <img src="https://i.pravatar.cc/40?u=${encodeURIComponent(fb.doctor)}" alt="دكتور" />
-                    <strong>${fb.doctor}</strong>
-                </div>
-                <span class="feedback-date">${fb.date}</span>
-            </div>
-            <div class="feedback-body">
-                ✅ ${fb.content}
-            </div>
-        `;
-        feedbackContainer.appendChild(card);
-    });
-}
-function sendUpdate(){
-    const response = fetch(`${editTeamUrl}`, {
-        method: "POST",
-        headers: "application/json",
-        body: JSON.stringify(api)
-    })
-    console.log(response.status);
-}
-
-// تشغيله مباشرة
-renderFeedback();
-
-
-    </script>
-    
+    <script type="module" src="js/editTeamProfile.js"></script>
 </body>
 </html>

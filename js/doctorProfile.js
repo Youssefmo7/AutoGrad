@@ -1,18 +1,45 @@
 const token = localStorage.getItem("userToken");
 if (!token) window.location.href = "index.html";
 await getDoctorData();
+let docTeams = await getTeams();
+console.log(docTeams);
 
 const user = JSON.parse(localStorage.getItem("userData"));
 const userName = `${user.firstName} ${user.middleName} ${user.lastName}`;
 document.querySelector(".personalInfo .name").textContent = userName;
 document.querySelector(".personalInfo .number").textContent = user.academicIDNumber;
 document.querySelector(".info .bio").textContent = user.bio;
-document.querySelector(".TeamsNum .num p").textContent = user.numberOfTeams;
+document.querySelector(".TeamsNum .num").textContent = user.numsOfTeamss;
 document.querySelector(".academicInfo .major ul :nth-child(1)").innerHTML=`<span>Department:</span> ${user.department}`;
 document.querySelector(".academicInfo .major ul :nth-child(1)").innerHTML=`<span>Office Number:</span> ${user.office_Number}`;
 document.querySelector('.contact #Email').textContent = `Email: ${user.email}`;
 document.querySelector('.contact #phone').textContent = `Phone: ${user.phone}`;
 
+docTeams.forEach(team => {
+  let div = document.createElement('div');
+  div.classList.add('team-card');
+  div.innerHTML = `
+    <div class="team-logo">
+      <img src="pics/logo.png" alt="Team Logo">
+    </div>
+    <div class="team-name">
+      <h3>${team.teamName}</h3>
+      <p>${team.teamBio}</p>
+    </div>
+  `
+  registeredTeams.append(div);
+})
+
+async function getTeams(){
+  const api = `https://autogradkareem-efdhcqesekaab8fm.polandcentral-01.azurewebsites.net/api/Team/GetTeamsOfDoctor`
+  const response = await fetch(`${api}`, {
+    method: "GET",
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  })
+  return await response.json();
+}
 
 async function getDoctorData() {
   const api =
@@ -31,65 +58,77 @@ async function getDoctorData() {
   }
 }
 
+document.querySelector('.Notification-btn').onclick = openModal;
+document.querySelector('.Notification-btn').style.cursor = 'pointer';
 
-// لما يضغط على زر الحذف
-document.querySelectorAll(".remove_btn").forEach((button) => {
-  button.addEventListener("click", function () {
-    const memberRow = this.closest(".team-card");
-    memberRow.remove();
-  });
-});
-
-//اضافه التيم اللي تم الموافقه عليه في قائمه الفرق
-
-function openModal() {
-  document.getElementById("modal").style.display = "flex";
+async function openModal() {
+    let requests;
+    const api = 'https://autogradkareem-efdhcqesekaab8fm.polandcentral-01.azurewebsites.net/api/Team/Getallrequesttodoctorteam'
+    const response = await fetch(`${api}`, {
+        headers: {'Authorization': `Bearer ${localStorage.getItem('userToken')}`}
+    }).then(r => r.json()).then(data => requests = data);
+    console.log(requests);
+    let requestsList = document.querySelector('.Members_stack');
+    requests.forEach(request => {
+        let req = document.createElement('div');
+        req.classList.add('team-card');
+        req.innerHTML = `
+            <div class="team-logo">
+                <img src="pics/omara.jpeg" alt="Team Logo">
+            </div>
+            <div class="team-name">
+                <h3>${request.teamName}</h3>
+            </div>
+        `
+        let teamActions = document.createElement('div');
+        teamActions.classList.add('team-actions');
+        let approveBtn = document.createElement('button');
+        approveBtn.classList.add('approve_btn');
+        approveBtn.innerHTML = "<i class='bx bx-check-circle'></i>"
+        approveBtn.addEventListener('click', async (e) => {
+            const response = await fetch(`https://autogradkareem-efdhcqesekaab8fm.polandcentral-01.azurewebsites.net/api/Team/DoctorAcceptRequest?requestId=${request.requestId}`, {
+                method: "POST",
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('userToken')}`
+                }
+            })
+            console.log(request.requestId)
+            const memberRow = e.target.closest(".team-card");
+            memberRow.remove();
+            updateNotificationCount();
+        })
+        let removeBtn = document.createElement('button');
+        removeBtn.classList.add('remove_btn');
+        removeBtn.addEventListener("click", async (e) => {
+            const response = await fetch(`https://autogradkareem-efdhcqesekaab8fm.polandcentral-01.azurewebsites.net/api/Team/DoctorRejectRequest?requestId=${request.requestId}`, {
+                method: "POST",
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('userToken')}`
+                }
+            })
+            const memberRow = e.target.closest(".team-card");
+            memberRow.remove();
+        });
+        removeBtn.innerHTML = "<i class='bx bx-x-circle'></i>";
+        teamActions.append(approveBtn);
+        teamActions.append(removeBtn);
+        req.append(teamActions);
+        requestsList.append(req);
+    })
+    document.getElementById("modal").style.display = "flex";
 }
 
+document.querySelector('.close-btn').onclick = closeModal;
+
 function closeModal() {
+  let requestsList = document.querySelectorAll('.Members_stack div');
+  requestsList.forEach(request => {
+    request.remove();
+  })
   document.getElementById("modal").style.display = "none";
 }
 
-// حذف العضو
-document.querySelectorAll(".remove_btn").forEach((button) => {
-  button.addEventListener("click", function () {
-    const memberRow = this.closest(".team-card");
-    memberRow.remove();
-    updateNotificationCount();
-  });
-});
 
-// الموافقة على العضو
-document.querySelectorAll(".approve_btn").forEach((button) => {
-  button.addEventListener("click", function () {
-    const memberCard = this.closest(".team-card");
-
-    // استخراج الصورة والاسم من كارت العضو
-    const imgSrc = memberCard.querySelector("img").src;
-    const memberName = memberCard.querySelector("h3").innerText;
-
-    // إنشاء كارت فريق جديد
-    const newTeamCard = document.createElement("div");
-    newTeamCard.classList.add("team-card");
-    newTeamCard.innerHTML = `
-                <div class="team-logo">
-                    <img src="${imgSrc}" alt="Team Logo">
-                </div>
-                <div class="team-name">
-                    <h3>${memberName.split(" ")[0]}'s Team</h3>
-                    <p>The project aims to simplify and organize the graduation process for university students by providing a centralized platform.</p>
-                </div>
-            `;
-
-    // إضافة الكارت إلى قسم الفرق
-    const registeredTeamsSection = document.getElementById("registeredTeams");
-    registeredTeamsSection.appendChild(newTeamCard);
-
-    // حذف الكارت من المودال
-    memberCard.remove();
-    updateNotificationCount();
-  });
-});
 
 // جرس الاشعارات
 function updateNotificationCount() {

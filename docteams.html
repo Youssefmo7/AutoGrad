@@ -54,7 +54,7 @@
                     <h4 style="padding-top: 30px;">AutoGrad</h4>
                 </div>
                 <p id="bio">The project aims to simplify and organize the graduation process for university students by providing a centralized platform. This system allows students to form teams, select supervisors, track seminar schedules and requirements, and facilitate seamless communication with supervisors.</p>
-                <div class="reqsAndGrade">
+                <!-- <div class="reqsAndGrade">
                     <ul class="reqs">
                         <h3>Requirements</h3>
                         <li>LOGO</li>
@@ -62,7 +62,7 @@
                         <li>Description</li>
                         <li>Proposal</li>
                     </ul>
-                </div>
+                </div> -->
 
                 <div class="proposal">
 
@@ -145,58 +145,14 @@
 
             </div>
             <div class="grades">
-                <div class="marks">Grades</div>
                 <h4>Team Members</h4>
                 <hr>
-                <div class="members">
-                    <div class="student">
-                        <div class="imagebox"><img src="images/Generic avatar.png" alt=""></div>
-                        <div class="nameId">
-                            <h5>Ahmed Ali Ramdan</h5>
-                            <h5>200019942</h5>
-                        </div>
-                        <div class="grade-inputs">
-                            <label>S1: <input type="number" min="0" max="150" onchange="saveGrade(this, '200019942', 's1')"></label>
-                            <label>S2: <input type="number" min="0" max="150" onchange="saveGrade(this, '200019942', 's2')"></label>
-                        </div>
-                    </div>
-                    <div class="student">
-                        <div class="imagebox"><img src="images/Generic avatar.png" alt=""></div>
-                        <div class="nameId">
-                            <h5>Ahmed Ali Ramdan</h5>
-                            <h5>200019942</h5>
-                        </div>
-                        <div class="grade-inputs">
-                            <label>S1: <input type="number" min="0" max="150" onchange="saveGrade(this, '200019942', 's1')"></label>
-                            <label>S2: <input type="number" min="0" max="150" onchange="saveGrade(this, '200019942', 's2')"></label>
-                        </div>
-                    </div>
-                    <div class="student">
-                        <div class="imagebox"><img src="images/Generic avatar.png" alt=""></div>
-                        <div class="nameId">
-                            <h5>Ahmed Ali Ramdan</h5>
-                            <h5>200019942</h5>
-                        </div>
-                        <div class="grade-inputs">
-                            <label>S1: <input type="number" min="0" max="150" onchange="saveGrade(this, '200019942', 's1')"></label>
-                            <label>S2: <input type="number" min="0" max="150" onchange="saveGrade(this, '200019942', 's2')"></label>
-                        </div>
-                    </div>
-                    <div class="student">
-                        <div class="imagebox"><img src="images/Generic avatar.png" alt=""></div>
-                        <div class="nameId">
-                            <h5>Ahmed Ali Ramdan</h5>
-                            <h5>200019942</h5>
-                        </div>
-                        <div class="grade-inputs">
-                            <label>S1: <input type="number" min="0" max="150" onchange="saveGrade(this, '200019942', 's1')"></label>
-                            <label>S2: <input type="number" min="0" max="150" onchange="saveGrade(this, '200019942', 's2')"></label>
-                        </div>
-                    </div>
-                </div>
+                <div class="members"></div>
+            </div>
             </div>
         </div>
     </div>
+    <script type="module" src="js/docTeams.js"></script>
     <script>
         const listItems = document.querySelectorAll('.teams li');
         let removeClass = function (){
@@ -254,7 +210,7 @@ teamFiles.forEach(file => {
         </div>
     `;
 
-    teamFilesContainer.appendChild(card);
+    // teamFilesContainer.append(card);
 });
 
 
