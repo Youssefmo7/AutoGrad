@@ -12,6 +12,8 @@ fields.forEach(field => {
 let bio = document.querySelector('.form textarea');
 bio.value = user.bio;
 
+document.querySelector('.nav-container .nav-bullet:first-child').href = 'DoctorProfile.html';
+
 document.querySelector('.form .buttons .cancel').addEventListener('click', e => {
     window.location.href = 'studentprofile.html';
 });
