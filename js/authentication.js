@@ -77,7 +77,6 @@ loginForm.addEventListener("submit", async (e) => {
     const response = await fetch(`${apiUrl}?${queryParams}`, {method: 'POST'});
     const token = await response.text();
     const user = jwt_decode(token);
-    if(token != localStorage.getItem('userToken')) localStorage.clear();
     localStorage.setItem('userId', user.id);
     localStorage.setItem('userRole', user.role);
     localStorage.setItem('userToken', token);
