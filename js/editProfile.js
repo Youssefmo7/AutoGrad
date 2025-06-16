@@ -43,12 +43,16 @@ document.querySelector('.form .buttons .save').addEventListener('click', async (
     });
     userData["bio"] = bio.value;
     localStorage.setItem('userData', JSON.stringify(userData));
-    const api = 'https://autogradkareem-efdhcqesekaab8fm.polandcentral-01.azurewebsites.net/api/Student/StudentEditProfile';
+    let api;
+    if(localStorage.getItem('userRole') == 'Student')
+        api = 'https://autogradkareem-efdhcqesekaab8fm.polandcentral-01.azurewebsites.net/api/Student/StudentEditProfile';
+    else
+        api = 'https://autogradkareem-efdhcqesekaab8fm.polandcentral-01.azurewebsites.net/api/Doctor';
     const resopnse = await fetch(`${api}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`
+            "Authorization": `Bearer ${token}`  
         },
         body: JSON.stringify(userData)
     });
