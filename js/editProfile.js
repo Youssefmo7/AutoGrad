@@ -6,16 +6,21 @@ if(!token) window.location.href = 'index.html';
 const user = JSON.parse(localStorage.getItem('userData'));
 let fields = document.querySelectorAll('.form input');
 fields.forEach(field => {
-    console.log(field);
+    // console.log(field);
     field.value = user[field.dataset.name];
 });
 let bio = document.querySelector('.form textarea');
 bio.value = user.bio;
 
-document.querySelector('.nav-container .nav-bullet:first-child').href = 'DoctorProfile.html';
+if(localStorage.getItem('userRole') == 'Doctor')
+{
+    document.querySelector('.nav-container .nav-bullet[href="EditTeamProfile.html"]').href = 'docteams.html'
+    document.querySelector('.nav-container .nav-bullet:first-child').href = 'DoctorProfile.html';
+}
 
 document.querySelector('.form .buttons .cancel').addEventListener('click', e => {
     let role = localStorage.getItem('userRole');
+    console.log(role);
     if(role == 'Student')
         window.location.href = 'studentprofile.html';
     else 
