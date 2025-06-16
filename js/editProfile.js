@@ -15,7 +15,11 @@ bio.value = user.bio;
 document.querySelector('.nav-container .nav-bullet:first-child').href = 'DoctorProfile.html';
 
 document.querySelector('.form .buttons .cancel').addEventListener('click', e => {
-    window.location.href = 'studentprofile.html';
+    let role = localStorage.getItem('userRole');
+    if(role == 'Student')
+        window.location.href = 'studentprofile.html';
+    else 
+        window.location.href = 'DoctorProfile.html';
 });
 
 function ProfileUpdated(){
